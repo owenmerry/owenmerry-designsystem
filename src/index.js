@@ -1,22 +1,9 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+// atoms
+export { default as Icon } from './components/atoms/Icon'
+export { default as Button } from './components/atoms/Button'
 
-import styles from './styles.css'
+// molecules
+export { default as Card } from './components/molecules/Card'
+export { default as FlexGrid } from './components/molecules/FlexGrid'
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
-
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
-}
+// examples
