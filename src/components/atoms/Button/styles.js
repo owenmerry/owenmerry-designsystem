@@ -17,9 +17,32 @@ export const ButtonStyle = styled.button`
   justify-content: center;
 
   svg{
-      margin-left: 8px;
-      margin-right: 8px;
+      display: block;
   }
+
+  :hover {
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.1);
+  }
+  :disabled {
+    background-color: #dcdcdc;
+    color: white;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.05);
+  }
+  .button-icon-before {
+    margin-right: 8px;
+  }
+  .button-icon-after {
+    margin-left: 8px;
+  }
+
+  &.button-no-text {
+    .button-icon-before,
+    .button-icon-after {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
+
   &.button-secondary{
     color: ${props => props.backgroundColor};
     border: solid 1px ${props => props.backgroundColor};
@@ -36,13 +59,10 @@ export const ButtonStyle = styled.button`
   &.button-circle{
     border-radius: 50%;
     padding: 12px;
-  }
 
-  :disabled {
-    background-color: #dcdcdc;
-    color: white;
-  }
-  :hover {
-    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.2);
+    .button-icon-after,
+    .button-icon-before {
+      margin: 0px;
+    }
   }
 `

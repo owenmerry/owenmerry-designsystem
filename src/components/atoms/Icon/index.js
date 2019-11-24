@@ -6,9 +6,7 @@ const Icon = (props) => {
   const iconTags = iconList
   const iconTagName = iconTags[props.type]
   return (
-    <span>
-      {iconTagName}
-    </span>
+    <span>{iconTagName}</span>
   )
 }
 

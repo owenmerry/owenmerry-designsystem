@@ -7,8 +7,9 @@ import { ButtonStyle } from './styles'
 const Button = (props) => {
   const showIcon = props.icon || false
   const iconStart = props.iconStart || false
-  const addClassSecondary = props.secondary && `button-secondary`
-  const addClassCircle = props.circle && `button-circle`
+  const addClassSecondary = props.secondary ? `button-secondary` : ``
+  const addClassCircle = props.circle ? `button-circle` : ``
+  const addClassNoText = props.children ? `` : `button-no-text`
 
   return (
     <ButtonStyle
@@ -16,16 +17,20 @@ const Button = (props) => {
       fontColor={props.fontColor}
       fontSize={props.fontSize}
       disabled={props.disabled}
-      className={`${addClassSecondary} ${addClassCircle}`}
+      className={`${addClassSecondary} ${addClassCircle} ${addClassNoText}`}
     >
       {showIcon && iconStart ? (
-        <Icon type={props.icon} />
+        <span className='button-icon-before'>
+          <Icon type={props.icon} />
+        </span>
       ) : (
         ''
       )}
       {props.children}
       {showIcon && !iconStart ? (
-        <Icon type={props.icon} />
+        <span className='button-icon-after'>
+          <Icon type={props.icon} />
+        </span>
       ) : (
         ''
       )}
@@ -40,7 +45,9 @@ Button.propTypes = {
   disabled: PropTypes.boolean,
   children: PropTypes.string,
   icon: PropTypes.string,
-  iconStart: PropTypes.boolean
+  iconStart: PropTypes.boolean,
+  circle: PropTypes.boolean,
+  secondary: PropTypes.boolean
 }
 
 Button.defaultProps = {

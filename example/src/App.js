@@ -25,20 +25,24 @@ export default class App extends Component {
 
       <h2>Buttons Icons</h2>
       <Button icon='FaPlus'>Add Item</Button>
-      <Button icon='FaPlus' iconStart>Add Item</Button>
+      <Button icon='FaPlus'>Add Item</Button>
       <Button icon='FaPlus'></Button>
       <Button icon='FaPlus' disabled></Button>
       <Button icon='MdPrint'></Button>
 
-      <h2>Buttons Icons</h2>
+      <h2>Buttons Sizes</h2>
+      <Button icon='FaPlus' fontSize='8'>Add Item</Button>
+      <Button icon='FaPlus'>Add Item</Button>
       <Button icon='FaPlus' fontSize='16'>Add Item</Button>
       <Button icon='FaPlus' fontSize='24'>Add Item</Button>
       <Button icon='FaPlus' fontSize='32'>Add Item</Button>
-      <Button icon='FaPlus' fontSize='40'>Add Item</Button>
+      <Button icon='FaPlus' iconStart fontSize='32'>Add Item</Button>
 
       <h2>Buttons Round</h2>
+      <Button icon='FaAdobe' circle fontSize='16' />
       <Button icon='FaPlus' circle fontSize='16' />
       <Button icon='FaPlus' secondary circle fontSize='24' />
+      <Button icon='FaAdobe' secondary circle fontSize='24' />
       <Button icon='FaPlus' disabled circle fontSize='32' />
       <Button icon='FaPlus' secondary disabled circle fontSize='40' />
       
