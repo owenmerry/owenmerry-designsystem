@@ -45,7 +45,6 @@ export default class App extends Component {
       <Button icon='FaAdobe' secondary circle fontSize='24' />
       <Button icon='FaPlus' disabled circle fontSize='32' />
       <Button icon='FaPlus' secondary disabled circle fontSize='40' />
-      
       </div>
     )
   }

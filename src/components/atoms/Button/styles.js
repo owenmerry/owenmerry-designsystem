@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const ButtonStyle = styled.button`
+
+/* general */
   font-family: 'Arial';
   background-color: ${props => props.backgroundColor};
   color: ${props => props.fontColor};
@@ -27,17 +29,19 @@ export const ButtonStyle = styled.button`
     background-color: #dcdcdc;
     color: white;
     box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.05);
+    cursor: not-allowed;
   }
-  .button-icon-before {
+  .button--icon-before {
     margin-right: 8px;
   }
-  .button-icon-after {
+  .button--icon-after {
     margin-left: 8px;
   }
 
+/* types */
   &.button-no-text {
-    .button-icon-before,
-    .button-icon-after {
+    .button--icon-before,
+    .button--icon-after {
       margin-left: 0px;
       margin-right: 0px;
     }
@@ -60,8 +64,8 @@ export const ButtonStyle = styled.button`
     border-radius: 50%;
     padding: 12px;
 
-    .button-icon-after,
-    .button-icon-before {
+    .button--icon-after,
+    .button--icon-before {
       margin: 0px;
     }
   }

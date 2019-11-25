@@ -20,7 +20,7 @@ const Button = (props) => {
       className={`${addClassSecondary} ${addClassCircle} ${addClassNoText}`}
     >
       {showIcon && iconStart ? (
-        <span className='button-icon-before'>
+        <span className='button--icon-before'>
           <Icon type={props.icon} />
         </span>
       ) : (
@@ -28,7 +28,7 @@ const Button = (props) => {
       )}
       {props.children}
       {showIcon && !iconStart ? (
-        <span className='button-icon-after'>
+        <span className='button--icon-after'>
           <Icon type={props.icon} />
         </span>
       ) : (
