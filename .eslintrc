@@ -21,7 +21,7 @@
     "react/jsx-boolean-value": 0,
 
     // turn off no semi colons
-    "semi" : 0,
+    "semi" : [2, "always"],
 
     // allow comment at end of list
     "comma-dangle" : 0
