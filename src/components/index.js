@@ -13,3 +13,4 @@ export { default as MenuHorizontal } from './molecules/MenuHorizontal'
 // organisms
 export { default as Layout } from './organisms/Layout'
 export { default as Header } from './organisms/Header'
+export { default as Hero } from './organisms/Hero'

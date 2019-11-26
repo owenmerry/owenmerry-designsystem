@@ -18,6 +18,12 @@
     "space-before-function-paren": 0,
 
     // allow specifying true explicitly for boolean props
-    "react/jsx-boolean-value": 0
+    "react/jsx-boolean-value": 0,
+
+    // turn off no semi colons
+    "semi" : 0,
+
+    // allow comment at end of list
+    "comma-dangle" : 0
   }
 }
