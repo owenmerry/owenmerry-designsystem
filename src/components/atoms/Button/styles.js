@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const ButtonStyle = styled.button`
 
@@ -17,6 +17,7 @@ export const ButtonStyle = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border: solid 0px;
 
   svg{
       display: block;
@@ -69,4 +70,4 @@ export const ButtonStyle = styled.button`
       margin: 0px;
     }
   }
-`
+`;

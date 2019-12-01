@@ -5,7 +5,6 @@ export const MenuStyle = styled.div`
   .menu-links {
     font-family: 'Arial';
     flex: 1;
-    background-color: ${colors.blue};
   }
   .link {
     display: inline-block;
