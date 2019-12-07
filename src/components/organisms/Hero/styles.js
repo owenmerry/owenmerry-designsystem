@@ -8,7 +8,7 @@ export const HeroStyle = styled.div`
   flex-direction: column;
   width: 100%;
   min-width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   max-height: 900px;
   background-image: url('https://images.unsplash.com/photo-1493799228497-1c99e413459b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
   background-size: cover;
