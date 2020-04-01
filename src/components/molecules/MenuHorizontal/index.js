@@ -7,38 +7,34 @@ import {
 import PropTypes from 'prop-types';
 import { MenuStyle } from './styles';
 
-const MenuHorizontal = props => (
-  <MenuStyle>
-    <div className='menu-links'>
-      <div className='link'>
-        <a className={props.page === '/live-links' ? 'selected' : ''}>
-          Home
-        </a>
-      </div>
+const MenuHorizontal = props => {
+  // const menuItems = props.items;
+  const isDarkStyle = props.dark;
+  const isLightStyle = props.light;
+  const addClassDark = isDarkStyle ? `menu-dark` : ``;
+  const addClassLight = isLightStyle ? `menu-light` : ``;
+  const addClassAlign = props.align ? props.align : `left`;
+  const menuItems = props.items;
+  const hasItems = menuItems && menuItems.length > 0;
 
-      <div className='link'>
-        <a className={props.page === '/build-link' ? 'selected' : ''}>
-          About
-        </a>
-      </div>
-
-      <div className='link'>
-        <a className={props.page === '/components' ? 'selected' : ''}>
-          Services
-        </a>
-      </div>
-
-      <div className='link'>
-        <a className={props.page === '/components' ? 'selected' : ''}>
-          Contact
-        </a>
-      </div>
-    </div>
-  </MenuStyle>
-);
+  return (
+    <MenuStyle>
+      { hasItems ? (
+        <ul className={`${addClassAlign} ${addClassDark} ${addClassLight}`}>
+          {menuItems.map((item, index) => (
+            <li key={index}><a href={item.url}>{item.name}</a></li>
+          )
+          )}
+        </ul>
+      ) : (
+        ''
+      )}
+    </MenuStyle>
+  );
+};
 
 MenuHorizontal.propTypes = {
-  page: PropTypes.string,
+  // page: PropTypes.string,
 };
 
 MenuHorizontal.defaultProps = {};

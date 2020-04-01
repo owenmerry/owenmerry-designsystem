@@ -7,11 +7,11 @@ const Header = props => (
   <HeaderStyle>
     <div className='logo'>
       <a>
-        <img src='../../static/images/app/ct-logo-white.png' />
+        <img src='http://www.webshare.me/images/app/webshare-logo.svg' />
       </a>
     </div>
 
-    <MenuHorizontal page={props.page} />
+    <MenuHorizontal {...props.menuSettings} />
   </HeaderStyle>
 );
 

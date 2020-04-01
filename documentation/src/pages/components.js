@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hero } from 'owenmerry-designsystem';
+import { Hero, CallToAction } from 'owenmerry-designsystem';
 
 export function ComponentsPage() {
     return (
@@ -14,7 +14,14 @@ export function ComponentsPage() {
           title='The Desert 2'
           paragraph='A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.'
           buttonLabel='Join Now'
+          menuTopSettings={{align: 'center', dark: true}}
         ></Hero>
+
+        <CallToAction
+          title='The Desert 2'
+          paragraph='A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.'
+          buttonLabel='Join Now'
+        ></CallToAction>
       </div>
     );
   }

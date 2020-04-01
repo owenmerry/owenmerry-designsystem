@@ -8,10 +8,18 @@ export const HeroStyle = styled.div`
   flex-direction: column;
   width: 100%;
   min-width: 100%;
-  min-height: 100vh;
+  height: 900px;
+  height: 100vh;
   max-height: 900px;
-  background-image: url('https://images.unsplash.com/photo-1493799228497-1c99e413459b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
   background-size: cover;
+  position: relative;
+
+  .menu-top{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+  }
 
   .text{
     margin-top: auto;
@@ -21,6 +29,7 @@ export const HeroStyle = styled.div`
     h1{
       font-size: 5rem;
       margin-bottom:1rem;
+      margin-top: 0;
     }
     p{
       font-size: 1rem;

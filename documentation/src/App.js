@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react'; 
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,18 +6,19 @@ import {
   Link
 } from "react-router-dom";
 
-import { 
+import {
   HomePage,
   AboutPage,
   ComponentsPage,
   AtomsPage,
-} from './pages'
+  LandingPage,
+} from './pages';
 
 export default class App extends Component {
   render () {
     return (
       <Router>
-          <ul>
+        <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -29,6 +30,9 @@ export default class App extends Component {
           </li>
           <li>
             <Link to="/atoms">atoms</Link>
+          </li>
+          <li>
+            <Link to="/landing">landing page</Link>
           </li>
         </ul>
         <Switch>
@@ -43,6 +47,9 @@ export default class App extends Component {
           </Route>
           <Route path="/atoms">
             <AtomsPage />
+          </Route>
+          <Route path="/landing">
+            <LandingPage />
           </Route>
         </Switch>
       </Router>

@@ -1,9 +1,10 @@
 import React from 'react'
-import {Button, Icon} from 'owenmerry-designsystem'
+import {Button, Icon, MenuHorizontal} from 'owenmerry-designsystem'
 
 export function AtomsPage() {
     return (
         <div>
+            <h1>Buttons</h1>
             <h2>Icons</h2>
             <Icon type='FaPlus' />
             <Icon type='FaAdobe' />
@@ -43,6 +44,51 @@ export function AtomsPage() {
             <Button icon='FaAdobe' secondary circle fontSize='24' />
             <Button icon='FaPlus' disabled circle fontSize='32' />
             <Button icon='FaPlus' secondary disabled circle fontSize='40' />
+
+            <h1>Menu</h1>
+            <h2>Left Menu</h2>
+            <MenuHorizontal light items={[
+              {name:'Home',url:'/home'},
+              {name:'About',url:'/about'},
+              {name:'Work',url:'/work'},
+              {name:'Contact',url:'/contact'},
+            ]}/>
+            <h2>Right Menu</h2>
+            <MenuHorizontal align='right' light items={[
+              {name:'Home',url:'/home'},
+              {name:'About',url:'/about'},
+              {name:'Work',url:'/work'},
+              {name:'Contact',url:'/contact'},
+            ]}/>
+            <h2>Center Menu</h2>
+            <MenuHorizontal align='center' light items={[
+              {name:'Home',url:'/home'},
+              {name:'About',url:'/about'},
+              {name:'Work',url:'/work'},
+              {name:'Contact',url:'/contact'},
+            ]}/>
+
+            <h2>Left Menu Dark</h2>
+            <MenuHorizontal dark items={[
+              {name:'Home',url:'/home'},
+              {name:'About',url:'/about'},
+              {name:'Work',url:'/work'},
+              {name:'Contact',url:'/contact'},
+            ]}/>
+            <h2>Right Menu Dark</h2>
+            <MenuHorizontal align='right' dark items={[
+              {name:'Home',url:'/home'},
+              {name:'About',url:'/about'},
+              {name:'Work',url:'/work'},
+              {name:'Contact',url:'/contact'},
+            ]}/>
+            <h2>Center Menu Dark</h2>
+            <MenuHorizontal align='center' dark items={[
+              {name:'Home',url:'/home'},
+              {name:'About',url:'/about'},
+              {name:'Work',url:'/work'},
+              {name:'Contact',url:'/contact'},
+            ]}/>
         </div>
     );
   }

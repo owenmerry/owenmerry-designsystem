@@ -1,6 +1,9 @@
 // stylesheet colors
 export const colors = {
-  blue: '#469295',
-  blue_dark: '#264563',
-  blue_light: '#516d88'
-}
+  blue: '#0b55fb',
+  blue_dark: '#0d48ce',
+  blue_light: '#2769ff',
+  primary: '#0b55fb',
+  primaryDark: '#0d48ce',
+  primaryText: 'white',
+};

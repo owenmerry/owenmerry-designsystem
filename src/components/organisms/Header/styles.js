@@ -8,15 +8,13 @@ export const HeaderStyle = styled.div`
   display: flex;
 
   .logo {
-    width: 300px;
     display: block;
     border-right: solid 1px ${colors.blue_light};
-    padding-top: 15px;
+    padding-top: 19px;
+    padding-right:30px;
+    padding-left: 20px;
   }
   .logo a {
-    padding-left: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px;
     opacity: 1;
   }
   .logo a:hover {
