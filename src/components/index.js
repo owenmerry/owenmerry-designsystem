@@ -19,3 +19,5 @@ export { default as Features } from './organisms/Features';
 export { default as Pricing } from './organisms/Pricing';
 export { default as Articles } from './organisms/Articles';
 export { default as Gallery } from './organisms/Gallery';
+export { default as CardList } from './organisms/CardList';
+export { default as Background } from './organisms/Background';

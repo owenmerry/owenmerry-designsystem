@@ -8,10 +8,10 @@ export const CardStyle = styled(FlexGrid)`
     text-decoration: none;
   }
   .card {
-    width: 350px;
+    width: ${props => (props.width || '350px')};
     border-radius: 15px;
     background-color: white;
-    box-shadow: 0px 0px 8px 4px #efefef;
+    box-shadow: 0px 0px ${props => (props.shadowLarge ? 40 : 8)}px 4px rgba(0,0,0,.2);
     transition: all 0.2s ease-in-out;
     position: relative;
     bottom: 0px;
@@ -19,14 +19,13 @@ export const CardStyle = styled(FlexGrid)`
     margin-bottom: ${props => (props.padding ? 20 : 0)}px;
   }
   .image {
-    height: 200px;
+    height: ${props => (props.imageHeight || '200px')};
     width: 100%;
     background: #f5f5f5;
     background-image: url(${props => props.image});
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    opacity: 0.8;
     border-radius: 15px;
     position: relative;
     text-align: center;
@@ -61,13 +60,12 @@ export const CardStyle = styled(FlexGrid)`
     color: #666666;
   }
   .card:hover {
-    box-shadow: 1px 0px 8px 4px #dcdcdc;
+    box-shadow: 1px 0px ${props => (props.shadowLarge ? 40 : 8)}px 4px rgba(0,0,0,.2);
     bottom: 3px;
   }
 
   // loading
   .card-loading {
-    opacity: 0.7;
   }
   .loading-text {
     opacity: 0.3;

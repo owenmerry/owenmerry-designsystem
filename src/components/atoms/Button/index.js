@@ -13,6 +13,7 @@ const Button = (props) => {
   const addClassSecondary = isSecondary ? `button-secondary` : ``;
   const addClassCircle = props.circle ? `button-circle` : ``;
   const addClassNoText = props.children ? `` : `button-no-text`;
+  const onClick = props.onClick;
 
   return (
     <ButtonStyle
@@ -21,6 +22,7 @@ const Button = (props) => {
       fontSize={props.fontSize}
       disabled={props.disabled}
       className={`${addClassSecondary} ${addClassCircle} ${addClassNoText}`}
+      onClick={onClick}
     >
       {showIcon && iconStart ? (
         <span className='button--icon-before'>
@@ -51,12 +53,13 @@ Button.propTypes = {
   fontSize: PropTypes.number,
   fontColor: PropTypes.string,
   backgroundColor: PropTypes.string,
-  disabled: PropTypes.boolean,
+  disabled: PropTypes.bool,
   children: PropTypes.string,
   icon: PropTypes.string,
-  iconStart: PropTypes.boolean,
-  circle: PropTypes.boolean,
-  secondary: PropTypes.boolean
+  iconStart: PropTypes.bool,
+  circle: PropTypes.bool,
+  secondary: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {

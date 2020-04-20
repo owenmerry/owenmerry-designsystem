@@ -1,6 +1,6 @@
 {
   "name": "owenmerry-designsystem",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "author": "owenmerry",
   "license": "MIT",
@@ -17,6 +17,7 @@
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
+    "dev": "rollup -c -w",
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"

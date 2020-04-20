@@ -15,3 +15,5 @@ export { default as Pricing } from './components/organisms/Pricing';
 export { default as Articles } from './components/organisms/Articles';
 export { default as Header } from './components/organisms/Header';
 export { default as Gallery } from './components/organisms/Gallery';
+export { default as CardList } from './components/organisms/CardList';
+export { default as Background } from './components/organisms/Background';
