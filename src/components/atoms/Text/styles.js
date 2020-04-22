@@ -25,4 +25,10 @@ export const TextStyle = styled.div`
         }
     }
 
+    ${''/* mobile styles */}
+  @media only screen and (max-width: 400px) {
+    h1{font-size:40px;}
+    p{font-size:20px;}
+  }
+
 `;

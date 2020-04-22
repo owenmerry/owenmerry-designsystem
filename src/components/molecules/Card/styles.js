@@ -15,8 +15,7 @@ export const CardStyle = styled(FlexGrid)`
     transition: all 0.2s ease-in-out;
     position: relative;
     bottom: 0px;
-    margin-right: ${props => (props.padding ? 20 : 0)}px;
-    margin-bottom: ${props => (props.padding ? 20 : 0)}px;
+    margin-bottom: ${props => (props.marginBottom ? props.marginBottom : 'inherit')};
   }
   .image {
     height: ${props => (props.imageHeight || '200px')};
@@ -106,4 +105,15 @@ export const CardStyle = styled(FlexGrid)`
     font-size: 10px;
     color: white;
   }
+
+${''/* mobile styles */}
+  @media only screen and (max-width: 400px) {
+    .card{
+      width: 280px;
+      .image{
+        height:280px;
+      }
+    }
+  }
+
 `;

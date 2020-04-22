@@ -16,12 +16,7 @@ const Card = (props) => {
   const timeStampRelative = moment(props.timestamp).fromNow();
 
   return isLoading ? (
-    <CardStyle
-      padding={props.padding}
-      shadowLarge={props.shadowLarge}
-      imageHeight={props.imageHeight}
-      width={props.width}
-    >
+    <CardStyle {...props} >
       <a target='_target'>
         <div className='card card-loading'>
           <div className='description-top'>
@@ -40,13 +35,7 @@ const Card = (props) => {
       </a>
     </CardStyle>
   ) : (
-    <CardStyle
-      image={props.image}
-      padding={props.padding}
-      shadowLarge={props.shadowLarge}
-      imageHeight={props.imageHeight}
-      width={props.width}
-    >
+    <CardStyle {...props}>
       {/* <a href={cardLink} {...linkTarget}> */}
       <div className='card'>
         <div className='description-top'>
@@ -91,7 +80,7 @@ Card.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   link: PropTypes.string,
-  padding: PropTypes.bool,
+  marginBottom: PropTypes.string,
   /** show label highlighting there is a fixture */
   hasFixture: PropTypes.bool,
   shadowLarge: PropTypes.bool,
@@ -103,7 +92,6 @@ Card.defaultProps = {
   linkTarget: false,
   hideLink: true,
   hideViewLink: true,
-  padding: true,
   hasFixture: false
 };
 

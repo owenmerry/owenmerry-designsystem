@@ -8,7 +8,6 @@ export const CardListStyle = styled.div`
         display: grid;
         grid-template-columns: auto;
         justify-items: center;
-        width:1100px;
         margin: 0px auto;
     }
 `;

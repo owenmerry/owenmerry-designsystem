@@ -29,11 +29,11 @@ export const HeaderStyle = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    display: block;
+    ${'' /* display: block;
     .logo {
       display: block;
       width: auto;
       border-right: none;
-    }
+    } */}
   }
 `;

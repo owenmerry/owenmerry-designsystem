@@ -22,7 +22,10 @@ const TextBlock = (props) => {
 
 TextBlock.propTypes = {
   title: PropTypes.string,
-  paragraph: PropTypes.string,
+  paragraph: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+  ]),
   dark: PropTypes.bool,
 };
 
