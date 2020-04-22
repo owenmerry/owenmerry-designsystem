@@ -3,14 +3,17 @@ import { FaShareSquare } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { CardStyle } from './styles';
 import Button from '../../atoms/Button/index';
+import moment from 'moment';
 
 const Card = (props) => {
-  const { hasFixture } = props;
+  const { isNew } = props;
   const isLoading = !!props.loading;
   const linkTarget = props.linkTarget ? { target: '_blank' } : {};
   const hideLink = !!props.hideLink;
   const hideViewLink = !!props.hideViewLink;
   const cardLink = props.link || '';
+  const imageRoundBorder = props.imageRoundBorder ? ' image-roundborder' : '';
+  const timeStampRelative = moment(props.timestamp).fromNow();
 
   return isLoading ? (
     <CardStyle
@@ -21,12 +24,15 @@ const Card = (props) => {
     >
       <a target='_target'>
         <div className='card card-loading'>
-          <div className='image' />
-          <div className='description'>
+          <div className='description-top'>
             <div className='title'>
               <span className='loading-text' />
             </div>
+          </div>
+          <div className={'image ' + imageRoundBorder} />
+          <div className='description'>
             <div className='subtitle'>
+              <span className='loading-text' />
               <span className='loading-text' />
             </div>
           </div>
@@ -41,29 +47,33 @@ const Card = (props) => {
       imageHeight={props.imageHeight}
       width={props.width}
     >
-      <a href={cardLink} {...linkTarget}>
-        <div className='card'>
-          <div className='image'>
-            {hideViewLink ? (
-              ''
-            ) : (
-              <Button>
-                <FaShareSquare /> View Link
-              </Button>
-            )}
-            {hasFixture ? <div className='label-fixture'>FIXTURE</div> : ''}
-          </div>
-          <div className='description'>
-            <div className='title'>{props.title}</div>
-            <div className='subtitle'>{props.subtitle}</div>
-            {hideLink ? (
-              ''
-            ) : (
-              <div className='subtitle'>{cardLink.substring(0, 40)}...</div>
-            )}
-          </div>
+      {/* <a href={cardLink} {...linkTarget}> */}
+      <div className='card'>
+        <div className='description-top'>
+          <div className='title'>{timeStampRelative}</div>
         </div>
-      </a>
+        <div className={'image ' + imageRoundBorder}>
+          {hideViewLink ? (
+            ''
+          ) : (
+            <Button>
+              <FaShareSquare /> View Link
+            </Button>
+          )}
+          {isNew ? <div className='label-fixture'>NEW</div> : ''}
+        </div>
+        <div className='description'>
+          {props.title ? (
+            <div className='title'>{props.title}</div>) : ''}
+          <div className='subtitle'>{props.subtitle}</div>
+          {hideLink ? (
+            ''
+          ) : (
+            <div className='subtitle'>{cardLink.substring(0, 40)}...</div>
+          )}
+        </div>
+      </div>
+      {/* </a> */}
     </CardStyle>
   );
 };

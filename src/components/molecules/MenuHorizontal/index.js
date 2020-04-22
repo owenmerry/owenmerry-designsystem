@@ -16,13 +16,20 @@ const MenuHorizontal = props => {
   const addClassAlign = props.align ? props.align : `left`;
   const menuItems = props.items;
   const hasItems = menuItems && menuItems.length > 0;
+  const addStyleClass = () => {
+    let styleClass = '';
+    if (props.style === 'background') {
+      styleClass = styleClass + 'menu-background';
+    }
+    return styleClass;
+  };
 
   return (
     <MenuStyle>
       { hasItems ? (
-        <ul className={`${addClassAlign} ${addClassDark} ${addClassLight}`}>
+        <ul className={`${addStyleClass()} ${addClassAlign} ${addClassDark} ${addClassLight}`}>
           {menuItems.map((item, index) => (
-            <li key={index}><a href={item.url}>{item.name}</a></li>
+            <li key={index} className={item.selected ? 'selected' : ''}><a href={item.url}>{item.name}</a></li>
           )
           )}
         </ul>

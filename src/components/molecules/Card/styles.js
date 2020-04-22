@@ -26,9 +26,11 @@ export const CardStyle = styled(FlexGrid)`
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    border-radius: 15px;
     position: relative;
     text-align: center;
+  }
+  .image-roundborder{
+    border-radius: 15px;
   }
   a:hover .image {
     background-color: #f5f5f5;
@@ -56,12 +58,22 @@ export const CardStyle = styled(FlexGrid)`
     padding-bottom: 5px;
   }
   .subtitle {
-    font-size: 11px;
+    font-size: 12px;
+    line-height: 16px;
     color: #666666;
+    padding-right: 20%;
+  }
+  .description-top {
+    padding: 15px 15px 5px;
+    .title{
+      font-size: 13px;
+      color: #2020C0;
+      font-weight: bold;
+    }
   }
   .card:hover {
-    box-shadow: 1px 0px ${props => (props.shadowLarge ? 40 : 8)}px 4px rgba(0,0,0,.2);
-    bottom: 3px;
+    ${'' /* box-shadow: 1px 0px ${props => (props.shadowLarge ? 40 : 8)}px 4px rgba(0,0,0,.2);
+    bottom: 3px; */}
   }
 
   // loading
@@ -80,7 +92,7 @@ export const CardStyle = styled(FlexGrid)`
   }
   .subtitle .loading-text {
     width: 250px;
-    height: 10px;
+    height: 12px;
   }
 
   // labels

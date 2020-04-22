@@ -22,15 +22,17 @@ export const MenuStyle = styled.div`
       opacity: 0.7;
       padding: 30px 15px;
       display: block;
+
+      &:hover{
+        opacity: 1;
+      }
     }
-    a:hover {
-      background-color: ${colors.blue_dark};
+
+    .selected a{
+      color: ${colors.primary};
       opacity: 1;
     }
-    .selected {
-      background-color: ${colors.blue_dark};
-      opacity: 1;
-    }
+
     a svg {
       font-size: 12px;
       margin-right: 5px;
@@ -61,6 +63,18 @@ export const MenuStyle = styled.div`
       }
       }
     }
+
+    &.menu-background{
+      .selected a{
+        background-color: ${colors.primary};
+        color: white;
+      }
+      a:hover {
+        background-color: ${colors.primary};
+        opacity: 1;
+      }
+    }
+
   }
 
   

@@ -8,7 +8,7 @@ const showInput = (props) => {
   if (props.type === 'checkbox') {
     input = (
       <input
-        type="checkbox"
+        type='checkbox'
         name={props.name}
         className={props.className}
         placeholder={props.placeholder}
@@ -25,7 +25,7 @@ const showInput = (props) => {
   } else {
     input = (
       <input
-        type="text"
+        type='text'
         name={props.name}
         className={props.className}
         placeholder={props.placeholder}

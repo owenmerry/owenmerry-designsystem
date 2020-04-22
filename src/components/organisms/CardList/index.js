@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { CardListStyle } from './styles';
 import Card from '../../molecules/Card/index';
 import Button from '../../atoms/Button/index';
+import Fade from 'react-reveal/Fade';
 
 const CardList = props => {
   const CardListItems = props.items;
@@ -14,7 +15,11 @@ const CardList = props => {
   const isLoading = props.loading;
 
   // state
-  const [stateCardListItems, setStateCardListItems] = useState(CardListItems);
+  // const [stateCardListItems, setStateCardListItems] = useState([]);
+
+  // useEffect(() => {
+  //   setStateCardListItems(props.items);
+  // });
 
   // functions
   const getLoadMoreText = () => {
@@ -26,11 +31,13 @@ const CardList = props => {
       <div className='list'>
         {CardListItems.map((item, index) => (
           <div key={index} className='card'>
-            <Card
-              loading={isLoading}
-              {...props.cardSettings}
-              {...item}
-            />
+            <Fade>
+              <Card
+                loading={isLoading}
+                {...props.cardSettings}
+                {...item}
+              />
+            </Fade>
           </div>
         ))
         }

@@ -1,6 +1,7 @@
 // atoms
 export { default as Icon } from './components/atoms/Icon';
 export { default as Button } from './components/atoms/Button';
+export { default as Text } from './components/atoms/Text';
 
 // molecules
 export { default as Card } from './components/molecules/Card';
@@ -17,3 +18,4 @@ export { default as Header } from './components/organisms/Header';
 export { default as Gallery } from './components/organisms/Gallery';
 export { default as CardList } from './components/organisms/CardList';
 export { default as Background } from './components/organisms/Background';
+export { default as TextBlock } from './components/organisms/TextBlock';
