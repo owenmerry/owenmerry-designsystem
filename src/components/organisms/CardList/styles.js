@@ -6,8 +6,23 @@ export const CardListStyle = styled.div`
 
     .list{
         display: grid;
-        grid-template-columns: auto;
+        grid-auto-rows: 1fr
+        grid-template-columns: ${(props) => 'auto '.repeat(props.grid || 3)};
         justify-items: center;
         margin: 0px auto;
     }
+    .more{
+      text-align: center;
+    }
+
+
+    ${''/* mobile styles */}
+  @media only screen and (max-width: 400px) {
+    .list{
+        grid-auto-rows: auto;
+        grid-template-columns: ${(props) => 'auto '.repeat(1)};
+    }
+  }
+
+
 `;

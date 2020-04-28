@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colors } from '../../../helpers/settings';
 
 export const HeroStyle = styled.div`
-  background-color: ${colors.blue};
+  background-color: ${colors.primary};
   color: white;
   display: flex;
   flex-direction: column;

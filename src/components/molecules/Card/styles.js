@@ -23,6 +23,7 @@ export const CardStyle = styled(FlexGrid)`
     background: #f5f5f5;
     background-image: url(${props => props.image});
     background-size: contain;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
@@ -49,6 +50,7 @@ export const CardStyle = styled(FlexGrid)`
   }
   .description {
     padding: 20px 15px;
+    word-wrap: break-word;
   }
   .title {
     font-size: 15px;

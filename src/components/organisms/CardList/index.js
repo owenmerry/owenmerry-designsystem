@@ -27,27 +27,27 @@ const CardList = props => {
   };
 
   return (
-    <CardListStyle>
+    <CardListStyle {...props}>
       <div className='list'>
         {CardListItems.map((item, index) => (
-          <div key={index} className='card'>
-            <Fade>
-              <Card
-                loading={isLoading}
-                {...props.cardSettings}
-                {...item}
-              />
-            </Fade>
-          </div>
+          <Fade>
+            <Card
+              key={index}
+              loading={isLoading}
+              {...props.cardSettings}
+              {...item}
+            />
+          </Fade>
         ))
         }
-        <div>
-          {showLoadMore ? (
-            <Button onClick={clickLoadMore}>{getLoadMoreText()}</Button>
-          )
-            : ''}
-        </div>
       </div>
+      {showLoadMore ? (
+        <div className='more'>
+          <Button onClick={clickLoadMore}>{getLoadMoreText()}</Button>
+
+        </div>
+      )
+        : ''}
     </CardListStyle>);
 };
 
@@ -63,8 +63,11 @@ CardList.propTypes = {
   loadMoreTextLoading: PropTypes.string,
   isLoadMoreLoading: PropTypes.bool,
   loading: PropTypes.bool,
+  grid: PropTypes.number,
 };
 
-CardList.defaultProps = {};
+CardList.defaultProps = {
+  grid: 3
+};
 
 export default CardList;
