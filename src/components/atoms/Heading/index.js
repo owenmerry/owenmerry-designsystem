@@ -1,9 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HeadingStyle } from './styles';
+import { Loading } from '../../index';
 
 const Heading = (props) => {
-  return (
+  const isLoading = !!props.loading;
+
+  return isLoading ? (
+    <HeadingStyle>
+      <h1><Loading width='400px' height='60px' /></h1>
+    </HeadingStyle>
+  ) : (
     <HeadingStyle>
       <h1>{props.text}</h1>
     </HeadingStyle>
@@ -12,6 +19,7 @@ const Heading = (props) => {
 
 Heading.propTypes = {
   text: PropTypes.string,
+  loading: PropTypes.bool,
 };
 
 Heading.defaultProps = {

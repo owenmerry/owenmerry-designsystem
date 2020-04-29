@@ -4,6 +4,8 @@ import FlexGrid from '../FlexGrid/index';
 const $greyColour = '#c0c0c0';
 
 export const CardStyle = styled(FlexGrid)`
+
+/* general */
   a {
     text-decoration: none;
   }
@@ -57,12 +59,20 @@ export const CardStyle = styled(FlexGrid)`
     color: #212121;
     font-weight: 600;
     padding-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .subtitle {
     font-size: 12px;
     line-height: 16px;
     color: #666666;
     padding-right: 20%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
   }
   .description-top {
     padding: 15px 15px 5px;
@@ -77,26 +87,14 @@ export const CardStyle = styled(FlexGrid)`
     bottom: 3px; */}
   }
 
-  // loading
+  /* loading */
   .card-loading {
-  }
-  .loading-text {
-    opacity: 0.3;
-    background-color: #dcdcdc;
-    display: inline-block;
-    height: 20px;
-    width: 100px;
-    border-radius: 10px;
-  }
-  .title .loading-text {
-    width: 150px;
-  }
-  .subtitle .loading-text {
-    width: 250px;
-    height: 12px;
+    .image{
+      background-image: none;
+    }
   }
 
-  // labels
+  /* labels */
   .label-fixture {
     position: absolute;
     bottom: 10px;
@@ -108,7 +106,7 @@ export const CardStyle = styled(FlexGrid)`
     color: white;
   }
 
-${''/* mobile styles */}
+  /* mobile styles */
   @media only screen and (max-width: 400px) {
     .card{
       width: 280px;

@@ -7,6 +7,7 @@ export { default as Text } from './components/atoms/Text';
 export { default as Card } from './components/molecules/Card';
 export { default as FlexGrid } from './components/molecules/FlexGrid';
 export { default as MenuHorizontal } from './components/molecules/MenuHorizontal';
+export { default as Title } from './components/molecules/Title';
 
 // organisms
 export { default as Hero } from './components/organisms/Hero';
@@ -19,3 +20,4 @@ export { default as Gallery } from './components/organisms/Gallery';
 export { default as CardList } from './components/organisms/CardList';
 export { default as Background } from './components/organisms/Background';
 export { default as TextBlock } from './components/organisms/TextBlock';
+export { default as ProfileTitle } from './components/organisms/ProfileTitle';

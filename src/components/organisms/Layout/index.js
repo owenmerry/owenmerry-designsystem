@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Menu from '../../molecules/Menu';
-import MenuDynamic from '../../molecules/MenuDynamic';
 import Header from '../Header';
 
 import { LayoutStyle, GlobalStyle } from './styles';
@@ -12,13 +11,13 @@ const Layout = (props) => {
   return (
     <LayoutStyle>
       <GlobalStyle whiteColor />
-      <div className="app">
-        <div className="header">
+      <div className='app'>
+        <div className='header'>
           <Header page={props.page} />
         </div>
-        <div className="content">
+        <div className='content'>
           {showMenu ? (
-            <div className="menu">
+            <div className='menu'>
               {props.layout === undefined || props.layout === 'live-link' ? (
                 <Menu links={props.links} section={props.section} />
               ) : (
@@ -33,8 +32,8 @@ const Layout = (props) => {
           ) : (
             ''
           )}
-          <div className="viewer">
-            <div className="viewer-holder">{props.children}</div>
+          <div className='viewer'>
+            <div className='viewer-holder'>{props.children}</div>
           </div>
         </div>
       </div>

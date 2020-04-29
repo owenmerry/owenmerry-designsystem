@@ -30,14 +30,12 @@ const CardList = props => {
     <CardListStyle {...props}>
       <div className='list'>
         {CardListItems.map((item, index) => (
-          <Fade>
-            <Card
-              key={index}
-              loading={isLoading}
-              {...props.cardSettings}
-              {...item}
-            />
-          </Fade>
+          <Card
+            key={index}
+            loading={isLoading}
+            {...props.cardSettings}
+            {...item}
+          />
         ))
         }
       </div>

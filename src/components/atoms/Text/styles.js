@@ -5,9 +5,13 @@ export const TextStyle = styled.div`
 
     /* general */
     h1{
-        color: ${colors.primary};
+        color: ${(props) => props.titleColor || colors.primary};
         font-size: 60px;
         font-weight: bold;
+        margin: 0px;
+    }
+    .title { 
+        margin: 20px 0px;
     }
     p{ 
         color: black;
@@ -22,6 +26,33 @@ export const TextStyle = styled.div`
         }
         p{
             color: white;
+        }
+    }
+
+    /* loading */
+    .loading{
+        .loading-text {
+        opacity: 0.3;
+        background-color: #dcdcdc;
+        display: inline-block;
+        height: 20px;
+        width: 100px;
+        border-radius: 10px;
+        }
+        .title{
+            h1 .loading-text {
+                height: 60px;
+                width: 400px;
+            }
+            .smalltext{
+                .loading-text
+                    height: 20px;
+                    width: 100px;  
+                }
+            }
+        .paragraphs .loading-text {
+            width: 250px;
+            height: 12px;
         }
     }
 

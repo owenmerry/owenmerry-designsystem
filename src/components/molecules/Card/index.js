@@ -2,13 +2,13 @@ import React from 'react';
 import { FaShareSquare } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { CardStyle } from './styles';
-import Button from '../../atoms/Button/index';
+import { Button, Link, Loading } from '../../index';
 import moment from 'moment';
 
 const Card = (props) => {
   const { isNew } = props;
   const isLoading = !!props.loading;
-  const linkTarget = props.linkTarget ? { target: '_blank' } : {};
+  const newWindow = !!props.linkNewWindow;
   const hideLink = !!props.hideLink;
   const hideViewLink = !!props.hideViewLink;
   const cardLink = props.link || '';
@@ -21,14 +21,16 @@ const Card = (props) => {
         <div className='card card-loading'>
           <div className='description-top'>
             <div className='title'>
-              <span className='loading-text' />
+              <Loading />
             </div>
           </div>
           <div className={'image ' + imageRoundBorder} />
           <div className='description'>
+            {props.title ? (
+              <div className='title'><Loading width='150px' /></div>) : ''}
             <div className='subtitle'>
-              <span className='loading-text' />
-              <span className='loading-text' />
+              <Loading block width='250px' marginBottom='10px' />
+              <Loading block width='250px' />
             </div>
           </div>
         </div>
@@ -36,33 +38,33 @@ const Card = (props) => {
     </CardStyle>
   ) : (
     <CardStyle {...props}>
-      {/* <a href={cardLink} {...linkTarget}> */}
       <div className='card'>
-        <div className='description-top'>
-          <div className='title'>{timeStampRelative}</div>
-        </div>
-        <div className={'image ' + imageRoundBorder}>
-          {hideViewLink ? (
-            ''
-          ) : (
-            <Button>
-              <FaShareSquare /> View Link
-            </Button>
-          )}
-          {isNew ? <div className='label-fixture'>NEW</div> : ''}
-        </div>
-        <div className='description'>
-          {props.title ? (
-            <div className='title'>{props.title}</div>) : ''}
-          <div className='subtitle'>{props.subtitle}</div>
-          {hideLink ? (
-            ''
-          ) : (
-            <div className='subtitle'>{cardLink.substring(0, 40)}...</div>
-          )}
-        </div>
+        <Link url={cardLink} newWindow={newWindow}>
+          <div className='description-top'>
+            <div className='title'>{timeStampRelative}</div>
+          </div>
+          <div className={'image ' + imageRoundBorder}>
+            {hideViewLink ? (
+              ''
+            ) : (
+              <Button>
+                <FaShareSquare /> View Link
+              </Button>
+            )}
+            {isNew ? <div className='label-fixture'>NEW</div> : ''}
+          </div>
+          <div className='description'>
+            {props.title ? (
+              <div className='title'>{props.title}</div>) : ''}
+            <div className='subtitle'>{props.subtitle}</div>
+            {hideLink ? (
+              ''
+            ) : (
+              <div className='subtitle'>{cardLink.substring(0, 40)}...</div>
+            )}
+          </div>
+        </Link>
       </div>
-      {/* </a> */}
     </CardStyle>
   );
 };
@@ -71,7 +73,7 @@ Card.propTypes = {
   /** show loading state */
   loading: PropTypes.bool,
   /** open in new window */
-  linkTarget: PropTypes.bool,
+  linkNewWindow: PropTypes.bool,
   /** hide roll over button */
   hideLink: PropTypes.bool,
   hideViewLink: PropTypes.bool,
@@ -85,6 +87,8 @@ Card.propTypes = {
   hasFixture: PropTypes.bool,
   shadowLarge: PropTypes.bool,
   width: PropTypes.string,
+  timestamp: PropTypes.string,
+  imageRoundBorder: PropTypes.bool,
 };
 
 Card.defaultProps = {
