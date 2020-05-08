@@ -8,6 +8,7 @@ export { default as Card } from './components/molecules/Card';
 export { default as FlexGrid } from './components/molecules/FlexGrid';
 export { default as MenuHorizontal } from './components/molecules/MenuHorizontal';
 export { default as Title } from './components/molecules/Title';
+export { default as Tabs } from './components/molecules/Tabs';
 
 // organisms
 export { default as Hero } from './components/organisms/Hero';

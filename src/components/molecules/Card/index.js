@@ -17,24 +17,22 @@ const Card = (props) => {
 
   return isLoading ? (
     <CardStyle {...props} >
-      <a target='_target'>
-        <div className='card card-loading'>
-          <div className='description-top'>
-            <div className='title'>
-              <Loading />
-            </div>
-          </div>
-          <div className={'image ' + imageRoundBorder} />
-          <div className='description'>
-            {props.title ? (
-              <div className='title'><Loading width='150px' /></div>) : ''}
-            <div className='subtitle'>
-              <Loading block width='250px' marginBottom='10px' />
-              <Loading block width='250px' />
-            </div>
+      <div className='card card-loading'>
+        <div className='description-top'>
+          <div className='title'>
+            <Loading />
           </div>
         </div>
-      </a>
+        <div className={'image ' + imageRoundBorder} />
+        <div className='description'>
+          {props.title ? (
+            <div className='title'><Loading width='150px' /></div>) : ''}
+          <div className='subtitle'>
+            <Loading block width='250px' marginBottom='10px' />
+            <Loading block width='250px' />
+          </div>
+        </div>
+      </div>
     </CardStyle>
   ) : (
     <CardStyle {...props}>

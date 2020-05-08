@@ -4,7 +4,7 @@ import { LinkStyle } from './styles';
 
 const Text = (props) => {
   const openNewWindow = !!props.newWindow;
-  const targetType = openNewWindow ? '_target' : '_self';
+  const targetType = openNewWindow ? '_blank' : '_self';
   return (
     <LinkStyle>
       {props.url ? (
@@ -23,7 +23,7 @@ const Text = (props) => {
 Text.propTypes = {
   url: PropTypes.string,
   newWindow: PropTypes.bool,
-  children: PropTypes.element,
+  children: PropTypes.array,
 };
 
 Text.defaultProps = {

@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CardListStyle } from './styles';
-import Card from '../../molecules/Card/index';
-import Button from '../../atoms/Button/index';
-import Fade from 'react-reveal/Fade';
+import {Button, Card, Input} from '../../index';
 
 const CardList = props => {
   const CardListItems = props.items;
@@ -15,23 +13,48 @@ const CardList = props => {
   const isLoading = props.loading;
 
   // state
-  // const [stateCardListItems, setStateCardListItems] = useState([]);
+  const [stateCardListItems, setStateCardListItems] = useState(CardListItems);
+  const [stateSearch, setStateSearch] = useState('');
 
-  // useEffect(() => {
-  //   setStateCardListItems(props.items);
-  // });
+  useEffect(() => {
+    setStateCardListItems(CardListItems);
+    console.log('CardList Module useEffect');
+  }, [CardListItems]);
+
+  const updateData = (search) => {
+    // const searchWord = stateSearch;
+    setStateSearch(search);
+    const searchWord = search;
+    if (searchWord === '') { return setStateCardListItems(props.items); }
+    const filteredList = props.items.filter((item) => {
+      return item.title.toLowerCase().search(searchWord) >= 0 || false;
+    });
+    console.log(`search ${searchWord}`, filteredList);
+    setStateCardListItems(filteredList);
+  };
 
   // functions
   const getLoadMoreText = () => {
     return isLoadMoreLoading ? loadMoreTextLoading : loadMoreText;
   };
+  const searchChange = (e) => {
+    // setStateSearch(e.target.value);
+    updateData(e.target.value);
+  };
 
   return (
     <CardListStyle {...props}>
+      <div className='controls'>
+        <Input
+          loading={isLoading}
+          className='search'
+          placeholder='Search'
+          onChange={searchChange} />
+      </div>
       <div className='list'>
-        {CardListItems.map((item, index) => (
+        {stateCardListItems.map((item, index) => (
           <Card
-            key={index}
+            key={item.id || index}
             loading={isLoading}
             {...props.cardSettings}
             {...item}
@@ -61,7 +84,7 @@ CardList.propTypes = {
   loadMoreTextLoading: PropTypes.string,
   isLoadMoreLoading: PropTypes.bool,
   loading: PropTypes.bool,
-  grid: PropTypes.number,
+  grid: PropTypes.string,
 };
 
 CardList.defaultProps = {

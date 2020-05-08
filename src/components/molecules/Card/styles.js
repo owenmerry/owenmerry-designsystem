@@ -109,7 +109,7 @@ export const CardStyle = styled(FlexGrid)`
   /* mobile styles */
   @media only screen and (max-width: 400px) {
     .card{
-      width: 280px;
+      width: 100%;
       .image{
         height:280px;
       }

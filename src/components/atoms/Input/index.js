@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { InputStyle } from './styles';
+import { Loading } from '../../index';
 
 const showInput = (props) => {
+  const isLoading = props.loading;
   let input = '';
 
   if (props.type === 'checkbox') {
@@ -35,7 +37,12 @@ const showInput = (props) => {
     );
   }
 
-  return input;
+  // loading style
+  const inputLoading = (
+    <Loading className={props.className} width='200px' height='45px' />
+  );
+
+  return isLoading ? inputLoading : input;
 };
 const Input = props => <InputStyle>{showInput(props)}</InputStyle>;
 

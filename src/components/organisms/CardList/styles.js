@@ -6,13 +6,19 @@ export const CardListStyle = styled.div`
 
     .list{
         display: grid;
-        grid-auto-rows: 1fr
-        grid-template-columns: ${(props) => 'auto '.repeat(props.grid || 3)};
-        justify-items: center;
+        grid-auto-rows: 1fr;
+        grid-gap: 10px;
+        grid-template-columns: ${(props) => '1fr '.repeat(props.grid || 3)};
         margin: 0px auto;
     }
     .more{
       text-align: center;
+    }
+
+    .controls{
+      .search{
+        margin-bottom: 50px;
+      }
     }
 
 
