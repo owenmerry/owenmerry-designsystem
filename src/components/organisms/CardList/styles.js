@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colors } from '../../../helpers/settings';
 
 export const CardListStyle = styled.div`
-    padding: 60px 0px;
+    padding: 30px 0px;
 
     .list{
         display: grid;
@@ -22,13 +22,32 @@ export const CardListStyle = styled.div`
     }
 
 
-    ${''/* mobile styles */}
-  @media only screen and (max-width: 400px) {
+
+/** Device Styles */
+
+  /* mobile styles */
+  @media only screen and (max-width: 720px) {
     .list{
-        grid-auto-rows: auto;
-        grid-template-columns: ${(props) => 'auto '.repeat(1)};
+      grid-auto-rows: auto;
+      grid-template-columns: ${(props) => 'auto '.repeat(1)};
     }
   }
+
+  /* tablet styles */
+  @media only screen and (min-width: 720px) and (max-width: 950px) {
+    .list{
+      grid-template-columns: ${(props) => 'auto '.repeat(2)};
+    }
+  }
+
+  /* small desktop */
+  @media only screen and (min-width: 950px) and (max-width: 1180px) {
+    .list{
+      grid-template-columns: ${(props) => 'auto '.repeat(3)};
+    }
+  }
+    
+}
 
 
 `;

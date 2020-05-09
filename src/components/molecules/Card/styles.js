@@ -62,6 +62,8 @@ export const CardStyle = styled(FlexGrid)`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
   }
   .subtitle {
     font-size: 12px;
@@ -106,14 +108,21 @@ export const CardStyle = styled(FlexGrid)`
     color: white;
   }
 
+/** Device Styles */
+
   /* mobile styles */
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 720px) {
     .card{
       width: 100%;
       .image{
         height:280px;
       }
+      .title{
+        word-break: break-word;
+        white-space: inherit;
+      }
     }
   }
+
 
 `;

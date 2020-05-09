@@ -6,6 +6,7 @@ export { default as Text } from './atoms/Text';
 export { default as Heading } from './atoms/Heading';
 export { default as Loading } from './atoms/Loading';
 export { default as Link } from './atoms/Link';
+export { default as Wrapper } from './atoms/Wrapper';
 
 // molecules
 export { default as Card } from './molecules/Card';

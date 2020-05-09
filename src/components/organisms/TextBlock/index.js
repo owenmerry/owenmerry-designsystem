@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TextBlockStyle } from './styles';
-import Text from '../../atoms/Text/index';
+import { Text } from '../../index';
 
 const TextBlock = (props) => {
   const addDarkClass = props.dark ? 'dark' : '';

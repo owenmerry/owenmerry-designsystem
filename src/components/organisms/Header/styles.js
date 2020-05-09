@@ -5,14 +5,19 @@ export const HeaderStyle = styled.div`
   background-color: ${props => (props.backgroundColor || colors.blue)};
   color: white;
   border-bottom: solid ${props => (props.showBorder ? 1 : 0)}px ${colors.blue_light};
-  display: flex;
+
+  .menu-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+  }
 
   .logo {
     display: block;
     border-right: solid ${props => (props.showBorder ? 1 : 0)}px ${colors.blue_light};
     padding-top: 19px;
     padding-right:30px;
-    padding-left: 20px;
   }
   .logo a {
     opacity: 1;
@@ -25,7 +30,6 @@ export const HeaderStyle = styled.div`
   }
 
   .menu {
-    flex: 1;
   }
 
   @media only screen and (max-width: 768px) {

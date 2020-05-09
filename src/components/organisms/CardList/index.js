@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CardListStyle } from './styles';
-import {Button, Card, Input} from '../../index';
+import {Button, Card, Input, Wrapper} from '../../index';
 
 const CardList = props => {
   const CardListItems = props.items;
@@ -43,33 +43,35 @@ const CardList = props => {
   };
 
   return (
-    <CardListStyle {...props}>
-      <div className='controls'>
-        <Input
-          loading={isLoading}
-          className='search'
-          placeholder='Search'
-          onChange={searchChange} />
-      </div>
-      <div className='list'>
-        {stateCardListItems.map((item, index) => (
-          <Card
-            key={item.id || index}
+    <Wrapper>
+      <CardListStyle {...props}>
+        <div className='controls'>
+          <Input
             loading={isLoading}
-            {...props.cardSettings}
-            {...item}
-          />
-        ))
-        }
-      </div>
-      {showLoadMore ? (
-        <div className='more'>
-          <Button onClick={clickLoadMore}>{getLoadMoreText()}</Button>
-
+            className='search'
+            placeholder='Search'
+            onChange={searchChange} />
         </div>
-      )
-        : ''}
-    </CardListStyle>);
+        <div className='list'>
+          {stateCardListItems.map((item, index) => (
+            <Card
+              key={item.id || index}
+              loading={isLoading}
+              {...props.cardSettings}
+              {...item}
+            />
+          ))
+          }
+        </div>
+        {showLoadMore ? (
+          <div className='more'>
+            <Button onClick={clickLoadMore}>{getLoadMoreText()}</Button>
+
+          </div>
+        )
+          : ''}
+      </CardListStyle>
+    </Wrapper>);
 };
 
 CardList.propTypes = {

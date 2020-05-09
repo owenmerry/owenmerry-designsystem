@@ -11,7 +11,7 @@ export const TextStyle = styled.div`
         margin: 0px;
     }
     .title { 
-        margin: 20px 0px;
+        padding: 20px 0px;
     }
     p{ 
         color: black;
