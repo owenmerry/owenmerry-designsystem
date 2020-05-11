@@ -16,9 +16,11 @@ export const CardListStyle = styled.div`
     }
 
     .controls{
-      .search{
         margin-bottom: 50px;
-      }
+        .control{
+          display: inline-block;
+          margin-right:10px;
+        }
     }
 
 

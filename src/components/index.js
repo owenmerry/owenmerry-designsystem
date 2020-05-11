@@ -27,3 +27,4 @@ export { default as Gallery } from './organisms/Gallery';
 export { default as CardList } from './organisms/CardList';
 export { default as Background } from './organisms/Background';
 export { default as ProfileTitle } from './organisms/ProfileTitle';
+export { default as AddItem } from './organisms/AddItem';

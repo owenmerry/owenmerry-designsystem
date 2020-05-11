@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CardListStyle } from './styles';
-import {Button, Card, Input, Wrapper} from '../../index';
+import {Button, Card, Input, Wrapper, AddItem} from '../../index';
 
 const CardList = props => {
   const CardListItems = props.items;
@@ -11,6 +11,7 @@ const CardList = props => {
   const loadMoreTextLoading = props.loadMoreTextLoading;
   const isLoadMoreLoading = props.isLoadMoreLoading;
   const isLoading = props.loading;
+  const hasAddItem = !!props.addItem;
 
   // state
   const [stateCardListItems, setStateCardListItems] = useState(CardListItems);
@@ -18,7 +19,6 @@ const CardList = props => {
 
   useEffect(() => {
     setStateCardListItems(CardListItems);
-    console.log('CardList Module useEffect');
   }, [CardListItems]);
 
   const updateData = (search) => {
@@ -46,11 +46,22 @@ const CardList = props => {
     <Wrapper>
       <CardListStyle {...props}>
         <div className='controls'>
-          <Input
-            loading={isLoading}
-            className='search'
-            placeholder='Search'
-            onChange={searchChange} />
+          {hasAddItem && (
+            <div className='control'>
+              <AddItem loading={isLoading} inline addItem={props.addItem} />
+            </div>
+          )}
+          <div className='control'>
+            <Input
+              inline
+              loading={isLoading}
+              className='search'
+              placeholder='Search'
+              onChange={searchChange}
+              focusExpand
+            />
+          </div>
+
         </div>
         <div className='list'>
           {stateCardListItems.map((item, index) => (
@@ -87,6 +98,7 @@ CardList.propTypes = {
   isLoadMoreLoading: PropTypes.bool,
   loading: PropTypes.bool,
   grid: PropTypes.string,
+  addItem: PropTypes.func,
 };
 
 CardList.defaultProps = {

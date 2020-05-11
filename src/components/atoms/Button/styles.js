@@ -18,6 +18,7 @@ export const ButtonStyle = styled.button`
   align-items: center;
   justify-content: center;
   border: solid 0px;
+  vertical-align: middle;
 
   svg{
       display: block;

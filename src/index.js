@@ -23,3 +23,4 @@ export { default as CardList } from './components/organisms/CardList';
 export { default as Background } from './components/organisms/Background';
 export { default as TextBlock } from './components/organisms/TextBlock';
 export { default as ProfileTitle } from './components/organisms/ProfileTitle';
+export { default as AddItem } from './components/organisms/AddItem';

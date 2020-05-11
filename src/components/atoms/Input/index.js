@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { InputStyle } from './styles';
 import { Loading } from '../../index';
 
-const showInput = (props) => {
+const showInput = (props, ref) => {
   const isLoading = props.loading;
   let input = '';
 
@@ -29,6 +29,7 @@ const showInput = (props) => {
       <input
         type='text'
         name={props.name}
+        ref={props.ref}
         className={props.className}
         placeholder={props.placeholder}
         onChange={props.onChange}
@@ -39,12 +40,12 @@ const showInput = (props) => {
 
   // loading style
   const inputLoading = (
-    <Loading className={props.className} width='200px' height='45px' />
+    <Loading alignMiddle className={props.className} width='200px' height='45px' />
   );
 
   return isLoading ? inputLoading : input;
 };
-const Input = props => <InputStyle>{showInput(props)}</InputStyle>;
+const Input = props => <InputStyle {...props}>{showInput(props)}</InputStyle>;
 
 Input.propTypes = {
   /** which input to show eg. select, text, checkbox, etc.. */

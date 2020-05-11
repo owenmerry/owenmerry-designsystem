@@ -4,7 +4,7 @@ import { TextStyle } from './styles';
 import { Heading, Loading } from '../../index';
 
 const Text = (props) => {
-  const isLoading = !!props.loading;
+  const isLoading = props.loading;
   const addDarkClass = props.dark ? 'dark' : '';
   const paragraphArray = typeof props.paragraph === 'string' ? [props.paragraph] : props.paragraph;
   const isParagraphArray = typeof props.paragraph === 'object';

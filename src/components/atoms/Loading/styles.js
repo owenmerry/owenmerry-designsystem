@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const LoadingStyle = styled.div`
 
     /* general */
+    display:inline-block;
+    vertical-align: ${(props) => props.alignMiddle ? 'middle' : 'inherit'};
     opacity: 0.3;
     background-color: #dcdcdc;
     display: ${(props) => props.block ? 'block' : 'inline-block'};;

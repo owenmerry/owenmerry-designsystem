@@ -4,7 +4,7 @@ import { ProfileTitleStyle } from './styles';
 import { Text, Wrapper } from '../../index';
 
 const ProfileTitle = (props) => {
-  const isLoading = !!props.loading;
+  const isLoading = props.loading;
 
   return (
     <Wrapper>

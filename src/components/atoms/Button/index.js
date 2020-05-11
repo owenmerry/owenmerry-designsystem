@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import { colors } from '../../../helpers/settings';
 import Icon from '../Icon';
 import { ButtonStyle } from './styles';
+import { Loading } from '../../index';
 
 const Button = (props) => {
+  const isLoading = props.loading;
   const showIcon = props.icon || false;
   const iconStart = props.iconStart || false;
   const isSecondary = props.secondary;
@@ -15,38 +17,41 @@ const Button = (props) => {
   const addClassNoText = props.children ? `` : `button-no-text`;
   const onClick = props.onClick;
 
-  return (
-    <ButtonStyle
-      backgroundColor={colorBackground}
-      fontColor={colorFont}
-      fontSize={props.fontSize}
-      disabled={props.disabled}
-      className={`${addClassSecondary} ${addClassCircle} ${addClassNoText}`}
-      onClick={onClick}
-    >
-      {showIcon && iconStart ? (
-        <span className='button--icon-before'>
-          <Icon type={props.icon} />
-        </span>
-      ) : (
-        ''
-      )}
+  return isLoading ? (
+    <Loading alignMiddle width='60px' height='45px' />
+  )
+    : (
+      <ButtonStyle
+        backgroundColor={colorBackground}
+        fontColor={colorFont}
+        fontSize={props.fontSize}
+        disabled={props.disabled}
+        className={`${addClassSecondary} ${addClassCircle} ${addClassNoText}`}
+        onClick={onClick}
+      >
+        {showIcon && iconStart ? (
+          <span className='button--icon-before'>
+            <Icon type={props.icon} />
+          </span>
+        ) : (
+          ''
+        )}
 
-      {props.children ? (
-        <span>{props.children}</span>
-      ) : (
-        ''
-      )}
+        {props.children ? (
+          <span>{props.children}</span>
+        ) : (
+          ''
+        )}
 
-      {showIcon && !iconStart ? (
-        <span className='button--icon-after'>
-          <Icon type={props.icon} />
-        </span>
-      ) : (
-        ''
-      )}
-    </ButtonStyle>
-  );
+        {showIcon && !iconStart ? (
+          <span className='button--icon-after'>
+            <Icon type={props.icon} />
+          </span>
+        ) : (
+          ''
+        )}
+      </ButtonStyle>
+    );
 };
 
 Button.propTypes = {
@@ -60,6 +65,7 @@ Button.propTypes = {
   circle: PropTypes.bool,
   secondary: PropTypes.bool,
   onClick: PropTypes.func,
+  loading: PropTypes.bool,
 };
 
 Button.defaultProps = {

@@ -115,7 +115,7 @@ export const CardStyle = styled(FlexGrid)`
     .card{
       width: 100%;
       .image{
-        height:280px;
+        height:150px;
       }
       .title{
         word-break: break-word;
