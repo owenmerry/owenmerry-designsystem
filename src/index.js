@@ -24,3 +24,5 @@ export { default as Background } from './components/organisms/Background';
 export { default as TextBlock } from './components/organisms/TextBlock';
 export { default as ProfileTitle } from './components/organisms/ProfileTitle';
 export { default as AddItem } from './components/organisms/AddItem';
+export { default as Login } from './components/organisms/Login';
+export { default as Signup } from './components/organisms/Signup';

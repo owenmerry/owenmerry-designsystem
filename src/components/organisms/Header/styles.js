@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import { colors } from '../../../helpers/settings';
 
 export const HeaderStyle = styled.div`
-  background-color: ${props => (props.backgroundColor || colors.blue)};
+  background-color: ${props => (props.backgroundColor || colors.primary)};
   color: white;
   border-bottom: solid ${props => (props.showBorder ? 1 : 0)}px ${colors.blue_light};
+  ${(props) => props.shadow && 'box-shadow: rgba(0,0,0,.2) 0px 0px 20px;'}
 
   .menu-wrapper{
     display: flex;
@@ -31,6 +32,7 @@ export const HeaderStyle = styled.div`
 
   .menu {
   }
+
 
   @media only screen and (max-width: 768px) {
     ${'' /* display: block;

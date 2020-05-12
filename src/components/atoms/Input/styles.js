@@ -8,7 +8,7 @@ export const InputStyle = styled.div`
  }
 
  input[type=text]{
-    width: 200px;
+    width: ${(props) => props.width ? props.width : '200px'};
     padding: 10px 15px;
     display: inline-block;
     box-sizing: border-box;

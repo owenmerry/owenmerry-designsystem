@@ -3,8 +3,6 @@ import { colors } from '../../../helpers/settings';
 
 export const MenuStyle = styled.div`
 
-
-
   ul {
     list-style-type: none;
     margin: 0;
@@ -19,7 +17,7 @@ export const MenuStyle = styled.div`
       font-weight: 700;
       text-decoration: none;
       font-size: 14px;
-      opacity: 0.7;
+      opacity: 0.5;
       padding: 30px 15px;
       display: block;
 
@@ -59,8 +57,11 @@ export const MenuStyle = styled.div`
       a {
       color: black;
       &:hover{
-        color: white;
+        color: black;
       }
+      }
+      .selected a{
+        color: ${colors.primary};
       }
     }
 

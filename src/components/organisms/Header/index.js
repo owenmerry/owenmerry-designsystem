@@ -8,7 +8,7 @@ const Header = props => {
   const getLogoURL = props.logoURL || 'http://www.webshare.me/images/app/webshare-logo.svg';
 
   return (
-    <HeaderStyle showBorder={props.showBorder} backgroundColor={props.backgroundColor}>
+    <HeaderStyle {...props}>
       <Wrapper>
         <div className='menu-wrapper'>
           <div className='logo'>

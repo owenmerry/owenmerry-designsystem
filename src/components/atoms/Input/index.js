@@ -18,6 +18,17 @@ const showInput = (props, ref) => {
         value={props.value}
       />
     );
+  } else if (props.type === 'password') {
+    input = (
+      <input
+        type='password'
+        name={props.name}
+        className={props.className}
+        placeholder={props.placeholder}
+        onChange={props.onChange}
+        value={props.value}
+      />
+    );
   } else if (props.type === 'select') {
     input = (
       <select>
@@ -50,6 +61,7 @@ const Input = props => <InputStyle {...props}>{showInput(props)}</InputStyle>;
 Input.propTypes = {
   /** which input to show eg. select, text, checkbox, etc.. */
   type: PropTypes.string,
+  width: PropTypes.string,
 };
 
 Input.defaultProps = {
