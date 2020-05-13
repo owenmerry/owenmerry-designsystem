@@ -1,11 +1,7 @@
 import React from 'react';
-import {
-  FaSlidersH,
-  FaBoxes,
-  FaShareSquare,
-} from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { MenuStyle } from './styles';
+import { Link } from '../../index';
 
 const MenuHorizontal = props => {
   // const menuItems = props.items;
@@ -24,12 +20,25 @@ const MenuHorizontal = props => {
     return styleClass;
   };
 
+  const menuClicked = (ref) => {
+    console.log(`clicked ${ref}`);
+    if (props.menuClicked) {
+      props.menuClicked({ref: ref});
+    };
+  };
+
   return (
     <MenuStyle>
       { hasItems ? (
         <ul className={`${addStyleClass()} ${addClassAlign} ${addClassDark} ${addClassLight}`}>
           {menuItems.map((item, index) => (
-            <li key={index} className={item.selected ? 'selected' : ''}><a href={item.url}>{item.name}</a></li>
+            <li key={index} className={item.selected ? 'selected' : ''}>
+              <span className='link' onClick={() => menuClicked(item.ref)}>
+                <Link url={item.url}>
+                  {item.name}
+                </Link>
+              </span>
+            </li>
           )
           )}
         </ul>
@@ -41,7 +50,7 @@ const MenuHorizontal = props => {
 };
 
 MenuHorizontal.propTypes = {
-  // page: PropTypes.string,
+  menuClicked: PropTypes.func,
 };
 
 MenuHorizontal.defaultProps = {};

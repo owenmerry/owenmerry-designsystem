@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colors } from '../../../helpers/settings';
 
 export const CardListStyle = styled.div`
-    padding: 30px 0px;
+    padding: 20px 0px;
 
     .list{
         display: grid;
@@ -11,12 +11,19 @@ export const CardListStyle = styled.div`
         grid-template-columns: ${(props) => '1fr '.repeat(props.grid || 3)};
         margin: 0px auto;
     }
+    .list-empty{
+      background-color: #fbfbfb;
+      color: #616161;
+      padding:60px 20px;
+      border-radius: 15px;
+      text-align: center;
+    }
     .more{
       text-align: center;
     }
 
     .controls{
-        margin-bottom: 50px;
+        margin-bottom: 25px;
         .control{
           display: inline-block;
           margin-right:10px;

@@ -44,6 +44,7 @@ const Signup = (props) => {
           <div className='input-box'>
             <Input
               width='100%'
+              type='password'
               value={statePassword}
               placeholder='Password'
               onChange={(e) => setStatePassword(e.target.value)}

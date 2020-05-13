@@ -40,4 +40,25 @@ export const HeroStyle = styled.div`
       line-height: 1.5rem;
     }
   }
+
+
+${(props) => props.styleType === 'light' &&
+`
+  background-color: white;
+  color: black;
+  .text{
+    max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
+    h1{
+      font-size:40px;
+    }
+    p{
+      max-width: inherit;
+    }
+  }
+`
+}
+
+
 `;

@@ -7,7 +7,7 @@ export const InputStyle = styled.div`
    color: blue;
  }
 
- input[type=text]{
+ input[type=text],input[type=password]{
     width: ${(props) => props.width ? props.width : '200px'};
     padding: 10px 15px;
     display: inline-block;
@@ -15,7 +15,7 @@ export const InputStyle = styled.div`
     background-color: white;
     color: #818181;
     border-radius: 12px;
-    border: 2px solid #818181;
+    border: 2px solid #e2e2e2;
     outline: none;
     font-size: 16px;
     transition: width .2s, border .2s;

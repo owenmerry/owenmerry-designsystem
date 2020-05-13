@@ -8,7 +8,7 @@ const Heading = (props) => {
 
   return isLoading ? (
     <HeadingStyle>
-      <h1><Loading width='250px' height='60px' /></h1>
+      <h1><Loading width='250px' height='50px' /></h1>
     </HeadingStyle>
   ) : (
     <HeadingStyle>

@@ -6,12 +6,15 @@ export const TextStyle = styled.div`
     /* general */
     h1{
         color: ${(props) => props.titleColor || colors.primary};
-        font-size: 60px;
+        font-size: 50px;
         font-weight: bold;
         margin: 0px;
     }
     .title { 
         padding: 20px 0px;
+    }
+    .smalltext-bottom{
+        margin-top: 5px;
     }
     p{ 
         color: black;

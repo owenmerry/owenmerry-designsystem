@@ -27,9 +27,9 @@ const Text = (props) => {
     <TextStyle {...props}>
       <div className={`${addDarkClass}`}>
         <div className='title'>
-          {props.titleTextTop && (<div className='smalltext'>{props.titleTextTop}</div>)}
+          {props.titleTextTop && (<div className='smalltext smalltext-top'>{props.titleTextTop}</div>)}
           <Heading text={props.title} />
-          {props.titleTextBottom && (<div className='smalltext'>{props.titleTextBottom}</div>)}
+          {props.titleTextBottom && (<div className='smalltext smalltext-bottom'>{props.titleTextBottom}</div>)}
         </div>
         <div className='paragraphs'>
           {isParagraphArray && paragraphArray.map((item, index) => (

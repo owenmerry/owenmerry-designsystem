@@ -12,26 +12,29 @@ export const MenuStyle = styled.div`
     li {
     }
 
-    a {
-      color: white;
+    .link, a{
+      color: inherit;
       font-weight: 700;
       text-decoration: none;
       font-size: 14px;
+      display: block;
+      cursor:pointer;
+    }
+
+    .link {
       opacity: 0.5;
       padding: 30px 15px;
-      display: block;
-
       &:hover{
         opacity: 1;
       }
     }
 
-    .selected a{
+    .selected .link{
       color: ${colors.primary};
       opacity: 1;
     }
 
-    a svg {
+    .link svg {
       font-size: 12px;
       margin-right: 5px;
     }
@@ -54,23 +57,23 @@ export const MenuStyle = styled.div`
 
     &.menu-light{
       background-color: white;
-      a {
+      .link {
       color: black;
       &:hover{
         color: black;
       }
       }
-      .selected a{
+      .selected .link{
         color: ${colors.primary};
       }
     }
 
     &.menu-background{
-      .selected a{
+      .selected .link{
         background-color: ${colors.primary};
         color: white;
       }
-      a:hover {
+      .link:hover {
         background-color: ${colors.primary};
         opacity: 1;
       }

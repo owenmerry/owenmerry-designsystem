@@ -33,6 +33,7 @@ const Login = (props) => {
           </div>
           <div className='input-box'>
             <Input
+              type='password'
               width='100%'
               value={statePassword}
               placeholder='Password'

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ProfileTitleStyle = styled.div`
 
 /* general */
-padding: 40px 0px;
+padding: 20px 0px;
 
 /* loading */
 .loading-text {

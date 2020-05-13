@@ -17,7 +17,7 @@ const Header = props => {
             </a>
           </div>
           <div className='menu'>
-            <MenuHorizontal {...props.menuSettings} />
+            <MenuHorizontal menuClicked={props.menuClicked} {...props.menuSettings} />
           </div>
         </div>
       </Wrapper>
@@ -31,6 +31,7 @@ Header.propTypes = {
   menuSettings: PropTypes.object,
   backgroundColor: PropTypes.string,
   showBorder: PropTypes.bool,
+  menuClicked: PropTypes.bool,
 };
 
 Header.defaultProps = {};

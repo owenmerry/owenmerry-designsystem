@@ -23,14 +23,19 @@ const Card = (props) => {
             <Loading />
           </div>
         </div>
-        <div className={'image ' + imageRoundBorder} />
+        {props.imageShow && (
+          <div className={'image ' + imageRoundBorder} />
+        )}
         <div className='description'>
-          {props.title ? (
-            <div className='title'><Loading width='150px' /></div>) : ''}
-          <div className='subtitle'>
-            <Loading block width='250px' marginBottom='10px' />
-            <Loading block width='250px' />
-          </div>
+          {props.title && (
+            <div className='title'><Loading width='150px' /></div>
+          )}
+          {props.subtitle && (
+            <div className='subtitle'>
+              <Loading block width='250px' marginBottom='10px' />
+              <Loading block width='250px' />
+            </div>
+          )}
         </div>
       </div>
     </CardStyle>
@@ -41,16 +46,18 @@ const Card = (props) => {
           <div className='description-top'>
             <div className='title'>{timeStampRelative}</div>
           </div>
-          <div className={'image ' + imageRoundBorder}>
-            {hideViewLink ? (
-              ''
-            ) : (
-              <Button>
-                <FaShareSquare /> View Link
-              </Button>
-            )}
-            {isNew ? <div className='label-fixture'>NEW</div> : ''}
-          </div>
+          {props.imageShow && (
+            <div className={'image ' + imageRoundBorder}>
+              {hideViewLink ? (
+                ''
+              ) : (
+                <Button>
+                  <FaShareSquare /> View Link
+                </Button>
+              )}
+              {isNew ? <div className='label-fixture'>NEW</div> : ''}
+            </div>
+          )}
           <div className='description'>
             {props.title ? (
               <div className='title'>{props.title}</div>) : ''}
@@ -87,6 +94,7 @@ Card.propTypes = {
   width: PropTypes.string,
   timestamp: PropTypes.string,
   imageRoundBorder: PropTypes.bool,
+  imageShow: PropTypes.bool,
 };
 
 Card.defaultProps = {
@@ -94,7 +102,8 @@ Card.defaultProps = {
   linkTarget: false,
   hideLink: true,
   hideViewLink: true,
-  hasFixture: false
+  hasFixture: false,
+  imageShow: true,
 };
 
 export default Card;

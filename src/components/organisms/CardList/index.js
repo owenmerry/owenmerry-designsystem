@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CardListStyle } from './styles';
-import {Button, Card, Input, Wrapper, AddItem} from '../../index';
+import {Button, Card, Input, Wrapper, AddItem, Text} from '../../index';
 
 const CardList = props => {
   const CardListItems = props.items;
@@ -29,7 +29,6 @@ const CardList = props => {
     const filteredList = props.items.filter((item) => {
       return item.title.toLowerCase().search(searchWord) >= 0 || false;
     });
-    console.log(`search ${searchWord}`, filteredList);
     setStateCardListItems(filteredList);
   };
 
@@ -74,6 +73,9 @@ const CardList = props => {
           ))
           }
         </div>
+        {stateCardListItems.length === 0 && (<div className='list-empty'>
+          No results found
+        </div>)}
         {showLoadMore ? (
           <div className='more'>
             <Button onClick={clickLoadMore}>{getLoadMoreText()}</Button>
