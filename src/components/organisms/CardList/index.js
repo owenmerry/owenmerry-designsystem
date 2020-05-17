@@ -47,7 +47,13 @@ const CardList = props => {
         <div className='controls'>
           {hasAddItem && (
             <div className='control'>
-              <AddItem loading={isLoading} inline addItem={props.addItem} />
+              <AddItem
+                loading={isLoading}
+                inline
+                addItem={props.addItem}
+                inputPlaceholder={props.addItemPlaceholder}
+                buttonLabel={props.addItemButton}
+              />
             </div>
           )}
           <div className='control'>
@@ -101,6 +107,8 @@ CardList.propTypes = {
   loading: PropTypes.bool,
   grid: PropTypes.string,
   addItem: PropTypes.func,
+  addItemPlaceholder: PropTypes.string,
+  addItemButton: PropTypes.string,
 };
 
 CardList.defaultProps = {

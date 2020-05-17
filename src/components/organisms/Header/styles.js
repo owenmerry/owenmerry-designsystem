@@ -35,13 +35,20 @@ export const HeaderStyle = styled.div`
   .menu {
   }
 
+  .menu-mobile{
+      display: none;
+    }
 
-  @media only screen and (max-width: 768px) {
-    ${'' /* display: block;
-    .logo {
-      display: block;
-      width: auto;
-      border-right: none;
-    } */}
+
+/** Device Styles */
+
+  /* mobile styles */
+  @media only screen and (max-width: 720px) {
+    .menu{
+      display: none;
+    }
+    .menu-mobile{
+      display:block;
+    }
   }
 `;

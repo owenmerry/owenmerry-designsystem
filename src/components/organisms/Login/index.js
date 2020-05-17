@@ -41,7 +41,7 @@ const Login = (props) => {
             />
           </div>
           <div className='button-box'>
-            <Button onClick={runLogin}>Login</Button>
+            <Button onClick={runLogin}>Login</Button><br />
           </div>
           <div className='info-box'>
             <p>Don't have an account? <a href='/signup'>Sign up to get started.</a></p>

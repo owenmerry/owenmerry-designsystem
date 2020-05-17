@@ -10,7 +10,7 @@ padding-top:60px;
     border-radius: 15px;
     padding: 50px;
     box-shadow: 0px 0px 40px 4px rgba(0,0,0,.2);
-    width:300px;
+    max-width:300px;
     margin: 0px auto;
     .error{
         color: ${colors.error};

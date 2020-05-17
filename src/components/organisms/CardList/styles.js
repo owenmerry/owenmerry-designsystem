@@ -38,7 +38,7 @@ export const CardListStyle = styled.div`
   @media only screen and (max-width: 720px) {
     .list{
       grid-auto-rows: auto;
-      grid-template-columns: ${(props) => 'auto '.repeat(1)};
+      grid-template-columns: ${(props) => 'auto '.repeat(2)};
     }
   }
 

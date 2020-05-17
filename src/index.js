@@ -3,6 +3,7 @@ export { default as Icon } from './components/atoms/Icon';
 export { default as Button } from './components/atoms/Button';
 export { default as Text } from './components/atoms/Text';
 export { default as Wrapper } from './components/atoms/Wrapper';
+export { default as Input } from './components/atoms/Input';
 
 // molecules
 export { default as Card } from './components/molecules/Card';

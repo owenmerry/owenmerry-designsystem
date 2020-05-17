@@ -6,7 +6,7 @@ export const ButtonStyle = styled.button`
   font-family: 'Arial';
   background-color: ${props => props.backgroundColor};
   color: ${props => props.fontColor};
-  padding: 12px 16px;
+  padding: 13px 16px;
   border-radius: 10px;
   font-size: ${props => props.fontSize}px;
   line-height: ${props => props.fontSize}px;
@@ -19,6 +19,9 @@ export const ButtonStyle = styled.button`
   justify-content: center;
   border: solid 0px;
   vertical-align: middle;
+  margin-top: -3px;
+
+  outline:0;
 
   svg{
       display: block;

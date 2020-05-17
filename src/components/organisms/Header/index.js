@@ -19,6 +19,15 @@ const Header = props => {
           <div className='menu'>
             <MenuHorizontal menuClicked={props.menuClicked} {...props.menuSettings} />
           </div>
+          <div className='menu-mobile'>
+            <MenuHorizontal menuClicked={props.menuClicked} {...{
+              light: true,
+              align: 'right',
+              items: [
+                {name: 'Menu', ref: '/links'},
+              ]
+            }} />
+          </div>
         </div>
       </Wrapper>
     </HeaderStyle>

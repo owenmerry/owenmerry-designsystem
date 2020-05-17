@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { InputStyle } from './styles';
-import { Loading } from '../../index';
+import { Loading, Icon } from '../../index';
 
-const showInput = (props, ref) => {
+const showInput = (props) => {
   const isLoading = props.loading;
   let input = '';
 
@@ -56,12 +56,30 @@ const showInput = (props, ref) => {
 
   return isLoading ? inputLoading : input;
 };
-const Input = props => <InputStyle {...props}>{showInput(props)}</InputStyle>;
+
+const Input = props => {
+  // functions
+  const clearButton = () => {
+    props.clearClick && props.clearClick();
+  };
+
+  return (<InputStyle {...props}>
+    <span className='wrap'>
+      {props.clearShow && !props.loading && (
+        <span onClick={clearButton} className='clear-icon'><Icon type='close-circle' /></span>
+      )}
+      {showInput(props)}
+    </span>
+  </InputStyle>);
+};
 
 Input.propTypes = {
   /** which input to show eg. select, text, checkbox, etc.. */
   type: PropTypes.string,
   width: PropTypes.string,
+  clearShow: PropTypes.bool,
+  clearClick: PropTypes.func,
+  loading: PropTypes.bool,
 };
 
 Input.defaultProps = {

@@ -26,4 +26,25 @@ export const InputStyle = styled.div`
   }
   ${(props) => props.inline && 'display: inline-block;'}
 
+
+/* clear styles */
+  .wrap {
+    position: relative;
+    .clear-icon {
+        position: absolute;
+        display: block;
+        top: 0px;
+        right: 10px;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        z-index:5;
+        color: #e2e2e2;
+    }
+    input {
+        ${props => props.clearShow && `padding-right: 30px;`}
+        box-sizing: border-box;
+    }
+  }
+
 `;

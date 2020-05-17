@@ -31,15 +31,30 @@ const AddItem = (props) => {
   return (
     <AddItemStyle {...props}>
       {!showInput ? (
-        <Button loading={isLoading} onClick={showForm}>Add</Button>
+        <Button
+          icon='add'
+          iconStart
+          loading={isLoading}
+          onClick={showForm}
+        >{props.buttonLabel}</Button>
       ) : (
         <div>
-          <Input
-            inline
-            value={inputLink}
-            onChange={e => setInputLink(e.target.value)}
-            placeholder='Paste website link here' />
-          <Button onClick={addLink}>Add Link</Button>
+          <span className='input'>
+            <Input
+              inline
+              value={inputLink}
+              onChange={e => setInputLink(e.target.value)}
+              placeholder={props.inputPlaceholder}
+              clearShow={inputLink !== ''}
+              clearClick={() => setInputLink('')}
+            />
+          </span>
+          <span className='button'>
+            <Button onClick={addLink}>{props.buttonLabel}</Button>
+          </span>
+          <span className='button'>
+            <Button secondary onClick={hideForm}>Hide</Button>
+          </span>
           {/* <Button onClick={addClipboard}>Add Clipboard</Button>
           <Button onClick={hideForm}>Close</Button> */}
         </div>
@@ -52,6 +67,8 @@ const AddItem = (props) => {
 AddItem.propTypes = {
   addItem: PropTypes.func,
   loading: PropTypes.bool,
+  inputPlaceholder: PropTypes.string,
+  buttonLabel: PropTypes.string,
 };
 
 AddItem.defaultProps = {
