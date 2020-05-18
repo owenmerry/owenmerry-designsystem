@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from '../../../helpers/settings';
 
 export const CardListStyle = styled.div`
     padding: 20px 0px;
@@ -40,6 +39,12 @@ export const CardListStyle = styled.div`
       grid-auto-rows: auto;
       grid-gap: inherit;
       grid-template-columns: ${(props) => 'auto '.repeat(2)};
+    }
+    .controls{
+        .control{
+          display: block;
+          margin-bottom:3px;
+        }
     }
   }
 

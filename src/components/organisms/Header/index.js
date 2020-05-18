@@ -28,6 +28,14 @@ const Header = props => {
               ]
             }} />
           </div>
+          {/* <div className='menu-slide'>
+            <ul>
+              <li>Home</li>
+              <li>My Links</li>
+              <li>My Collections</li>
+              <li>Logout</li>
+            </ul>
+          </div> */}
         </div>
       </Wrapper>
     </HeaderStyle>

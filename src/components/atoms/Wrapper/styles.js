@@ -13,7 +13,7 @@ margin: 0px auto;
   @media only screen and (max-width: 720px) {
     width:100%;
     .box{
-        padding:10px;
+        padding:0px 10px;
     }
   }
 

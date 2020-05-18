@@ -47,4 +47,13 @@ export const InputStyle = styled.div`
     }
   }
 
+
+  /** Device Styles */
+
+  /* mobile styles */
+  @media only screen and (max-width: 720px) {
+    input[type=text],input[type=password]{
+    width: ${(props) => props.width ? props.width : '150px'};
+  }
+
 `;

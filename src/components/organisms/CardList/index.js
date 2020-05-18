@@ -26,10 +26,12 @@ const CardList = props => {
   const updateData = (search) => {
     // const searchWord = stateSearch;
     setStateSearch(search);
-    const searchWord = search;
+    const searchWord = search.toLowerCase();
     if (searchWord === '') { return setStateCardListItems(props.items); }
     const filteredList = props.items.filter((item) => {
-      return item.title.toLowerCase().search(searchWord) >= 0 || false;
+      return (item.title && item.title.toLowerCase().search(searchWord) >= 0) ||
+      (item.subtitle && item.subtitle.toLowerCase().search(searchWord) >= 0) ||
+      false;
     });
     setStateCardListItems(filteredList);
   };
@@ -63,7 +65,7 @@ const CardList = props => {
               inline
               loading={isLoading}
               className='search'
-              placeholder='Search'
+              placeholder='Filter'
               onChange={searchChange}
               focusExpand
             />
@@ -72,7 +74,7 @@ const CardList = props => {
         </div>
         <div className='list'>
           {stateCardListItems.map((item, index) => (
-            <LazyLoad key={item.id || index} once placeholder={<Card loading title='loading' {...props.cardSettings} />}>
+            <LazyLoad key={item.id || index} once placeholder={<Card loading title='loading' subtitle='loading' {...props.cardSettings} />}>
               <Card
                 loading={isLoading}
                 {...props.cardSettings}

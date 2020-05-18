@@ -39,6 +39,10 @@ export const HeaderStyle = styled.div`
       display: none;
     }
 
+  .menu-slide{
+    
+  }
+
 
 /** Device Styles */
 
