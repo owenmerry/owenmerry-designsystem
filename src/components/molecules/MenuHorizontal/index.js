@@ -31,7 +31,7 @@ const MenuHorizontal = props => {
     <MenuStyle {...props}>
       { hasItems ? (
         <ul className={`${addStyleClass()} ${addClassAlign} ${addClassDark} ${addClassLight}`}>
-          {menuItems.map((item, index) => (
+          {menuItems.map((item, index) => item && (
             <li key={index} className={item.selected ? 'selected' : ''}>
               <span className='link' onClick={() => menuClicked(item.ref)}>
                 <Link url={item.url}>
