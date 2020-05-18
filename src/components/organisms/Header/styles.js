@@ -3,6 +3,7 @@ import { colors } from '../../../helpers/settings';
 
 export const HeaderStyle = styled.div`
   position: relative;
+  ${(props) => props.sticky && 'position:sticky;'}
   z-index: 10;
   background-color: ${props => (props.backgroundColor || colors.primary)};
   color: white;
@@ -38,10 +39,6 @@ export const HeaderStyle = styled.div`
   .menu-mobile{
       display: none;
     }
-
-  .menu-slide{
-    
-  }
 
 
 /** Device Styles */

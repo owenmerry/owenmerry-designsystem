@@ -129,6 +129,7 @@ export const CardStyle = styled(FlexGrid)`
       }
       .subtitle{
         font-size: 10px;
+        line-height: 12px;
         padding-right: 0px;
       }
     }

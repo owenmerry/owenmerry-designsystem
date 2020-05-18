@@ -28,3 +28,4 @@ export { default as ProfileTitle } from './components/organisms/ProfileTitle';
 export { default as AddItem } from './components/organisms/AddItem';
 export { default as Login } from './components/organisms/Login';
 export { default as Signup } from './components/organisms/Signup';
+export { default as MenuSlide } from './components/organisms/MenuSlide';

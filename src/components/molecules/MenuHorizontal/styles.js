@@ -8,7 +8,7 @@ export const MenuStyle = styled.div`
     margin: 0;
     padding: 0;
     display: flex;
-
+    ${(props) => props.isVertical && 'flex-direction: column;'};
     li {
     }
 
@@ -35,7 +35,7 @@ export const MenuStyle = styled.div`
     }
 
     .link svg {
-      font-size: 12px;
+      font-size: 20px;
       margin-right: 5px;
     }
 

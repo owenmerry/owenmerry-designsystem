@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { HeaderStyle } from './styles';
 import MenuHorizontal from '../../molecules/MenuHorizontal/index';
-import { Wrapper } from '../../index';
+import { Wrapper, MenuSlide } from '../../index';
 
 const Header = props => {
   const getLogoURL = props.logoURL || 'http://www.webshare.me/images/app/webshare-logo.svg';
+
+  // state
+  const [stateMenuMobile, setStateMenuMobile] = useState(false);
+
+  const hideMenuMobile = () => {
+    setStateMenuMobile(false);
+  };
+
+  const showMenuMobile = () => {
+    setStateMenuMobile(true);
+  };
 
   return (
     <HeaderStyle {...props}>
@@ -20,22 +31,20 @@ const Header = props => {
             <MenuHorizontal menuClicked={props.menuClicked} {...props.menuSettings} />
           </div>
           <div className='menu-mobile'>
-            <MenuHorizontal menuClicked={props.menuClicked} {...{
+            <MenuHorizontal menuClicked={showMenuMobile} {...{
               light: true,
               align: 'right',
               items: [
-                {name: 'Menu', ref: '/links'},
+                {icon: 'menu', ref: 'menu'},
               ]
             }} />
           </div>
-          {/* <div className='menu-slide'>
-            <ul>
-              <li>Home</li>
-              <li>My Links</li>
-              <li>My Collections</li>
-              <li>Logout</li>
-            </ul>
-          </div> */}
+          {stateMenuMobile && (
+            <MenuSlide closeButton={hideMenuMobile} menuSettings={{
+              menuClicked: props.menuClicked,
+              ...props.menuSettings
+            }} />
+          )}
         </div>
       </Wrapper>
     </HeaderStyle>
@@ -49,6 +58,7 @@ Header.propTypes = {
   backgroundColor: PropTypes.string,
   showBorder: PropTypes.bool,
   menuClicked: PropTypes.bool,
+  sticky: PropTypes.bool,
 };
 
 Header.defaultProps = {};

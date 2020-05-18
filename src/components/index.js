@@ -31,3 +31,4 @@ export { default as ProfileTitle } from './organisms/ProfileTitle';
 export { default as AddItem } from './organisms/AddItem';
 export { default as Login } from './organisms/Login';
 export { default as Signup } from './organisms/Signup';
+export { default as MenuSlide } from './organisms/MenuSlide';

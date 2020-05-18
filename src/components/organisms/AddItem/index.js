@@ -50,7 +50,7 @@ const AddItem = (props) => {
             />
           </span>
           <span className='button'>
-            <Button onClick={addLink}>{props.buttonLabel}</Button>
+            <Button onClick={addLink}>Add</Button>
           </span>
           <span className='button'>
             <Button secondary onClick={hideForm}>Hide</Button>

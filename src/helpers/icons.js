@@ -11,4 +11,5 @@ export const iconList = {
   'close': <faIcons.FaTimes />,
   'close-circle': <faIcons.FaTimesCircle />,
   'add': <faIcons.FaPlus />,
+  'menu': <faIcons.FaBars />,
 };

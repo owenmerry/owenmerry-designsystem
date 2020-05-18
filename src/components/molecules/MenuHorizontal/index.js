@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MenuStyle } from './styles';
-import { Link } from '../../index';
+import { Link, Icon } from '../../index';
 
 const MenuHorizontal = props => {
   // const menuItems = props.items;
@@ -28,13 +28,14 @@ const MenuHorizontal = props => {
   };
 
   return (
-    <MenuStyle>
+    <MenuStyle {...props}>
       { hasItems ? (
         <ul className={`${addStyleClass()} ${addClassAlign} ${addClassDark} ${addClassLight}`}>
           {menuItems.map((item, index) => (
             <li key={index} className={item.selected ? 'selected' : ''}>
               <span className='link' onClick={() => menuClicked(item.ref)}>
                 <Link url={item.url}>
+                  {item.icon && (<Icon type={item.icon} />)}
                   {item.name}
                 </Link>
               </span>
@@ -51,6 +52,7 @@ const MenuHorizontal = props => {
 
 MenuHorizontal.propTypes = {
   menuClicked: PropTypes.func,
+  isVertical: PropTypes.bool,
 };
 
 MenuHorizontal.defaultProps = {};
