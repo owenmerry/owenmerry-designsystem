@@ -26,7 +26,8 @@ export const MenuSlideStyle = styled.div`
         position:relative;
         height:100%;
         width:100%;
-        padding-top: 40px;
+        padding-top: 80px;
+        overflow:scroll;
         .close{
             position: absolute;
             top:10px;

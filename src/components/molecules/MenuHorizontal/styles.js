@@ -24,6 +24,7 @@ export const MenuStyle = styled.div`
     .link {
       opacity: 0.5;
       padding: 30px 15px;
+      ${(props) => props.isVertical && 'border-top: solid 1px #e8e8e8;'};
       &:hover{
         opacity: 1;
       }

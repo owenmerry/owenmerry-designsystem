@@ -3,7 +3,7 @@ import { colors } from '../../../helpers/settings';
 
 export const HeaderStyle = styled.div`
   position: relative;
-  ${(props) => props.sticky && 'position:sticky;'}
+  ${(props) => props.sticky && 'position:sticky;top:0px;'}
   z-index: 10;
   background-color: ${props => (props.backgroundColor || colors.primary)};
   color: white;

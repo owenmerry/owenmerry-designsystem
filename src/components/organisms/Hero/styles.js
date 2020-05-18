@@ -46,17 +46,41 @@ ${(props) => props.styleType === 'light' &&
 `
   background-color: white;
   color: black;
+  height: calc(100vh - 76px);
   .text{
     max-width:500px;
     margin-left:auto;
     margin-right:auto;
+    padding:20px;
     h1{
-      font-size:40px;
+      font-size:38px;
     }
     p{
+      font-size:14px;
       max-width: inherit;
     }
   }
+
+  /** Device Styles */
+
+  /* mobile styles */
+  @media only screen and (max-width: 720px) {
+    display:block;
+    height: inherit;
+    .text{
+      margin-top:20vh;
+      h1{
+        font-size:30px;
+      }
+      p{
+        font-size:14px;
+        max-width: inherit;
+      }
+    }
+  }
+
+
+
 `
 }
 
