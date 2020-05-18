@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CardListStyle } from './styles';
-import {Button, Card, Input, Wrapper, AddItem, Text} from '../../index';
+import {Button, Card, Input, Wrapper, AddItem} from '../../index';
+// import LazyLoad from 'react-lazy-load';
+import LazyLoad from 'react-lazyload';
 
 const CardList = props => {
   const CardListItems = props.items;
@@ -70,12 +72,13 @@ const CardList = props => {
         </div>
         <div className='list'>
           {stateCardListItems.map((item, index) => (
-            <Card
-              key={item.id || index}
-              loading={isLoading}
-              {...props.cardSettings}
-              {...item}
-            />
+            <LazyLoad key={item.id || index} once placeholder={<Card loading title='loading' {...props.cardSettings} />}>
+              <Card
+                loading={isLoading}
+                {...props.cardSettings}
+                {...item}
+              />
+            </LazyLoad>
           ))
           }
         </div>

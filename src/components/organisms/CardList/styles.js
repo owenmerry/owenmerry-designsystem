@@ -38,6 +38,7 @@ export const CardListStyle = styled.div`
   @media only screen and (max-width: 720px) {
     .list{
       grid-auto-rows: auto;
+      grid-gap: inherit;
       grid-template-columns: ${(props) => 'auto '.repeat(2)};
     }
   }

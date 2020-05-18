@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { LoginStyle } from './styles';
-import { Input, Button, Wrapper } from '../../index';
+import { Input, Button, Wrapper, Alert } from '../../index';
 
 const Login = (props) => {
   const [stateEmail, setStateEmail] = useState('');
@@ -20,9 +20,7 @@ const Login = (props) => {
       <LoginStyle>
         <div className='box'>
           <h2>Login to webshare</h2>
-          {props.errorText && (
-            <div className='error'>{props.errorText}</div>
-          )}
+          <Alert type='error' text={props.errorText} />
           <div className='input-box'>
             <Input
               width='100%'

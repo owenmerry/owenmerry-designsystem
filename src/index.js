@@ -4,6 +4,7 @@ export { default as Button } from './components/atoms/Button';
 export { default as Text } from './components/atoms/Text';
 export { default as Wrapper } from './components/atoms/Wrapper';
 export { default as Input } from './components/atoms/Input';
+export { default as Alert } from './components/atoms/Alert';
 
 // molecules
 export { default as Card } from './components/molecules/Card';

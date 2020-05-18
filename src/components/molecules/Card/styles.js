@@ -62,8 +62,11 @@ export const CardStyle = styled(FlexGrid)`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    word-break: break-all;
     -webkit-line-clamp: 1; /* number of lines to show */
     -webkit-box-orient: vertical;
+    max-height:24px;
+    overflow:hidden;
   }
   .subtitle {
     font-size: 12px;
@@ -73,8 +76,11 @@ export const CardStyle = styled(FlexGrid)`
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
+    word-break: break-all;
     -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;
+    max-height:30px;
+    overflow:hidden;
   }
   .description-top {
     padding: 15px 15px 5px;
@@ -113,13 +119,17 @@ export const CardStyle = styled(FlexGrid)`
   /* mobile styles */
   @media only screen and (max-width: 720px) {
     .card{
-      width: 100%;
+      width: 95%;
       .image{
-        height:150px;
+        height:100px;
       }
       .title{
-        word-break: break-word;
         white-space: inherit;
+        font-size: 12px;
+      }
+      .subtitle{
+        font-size: 10px;
+        padding-right: 0px;
       }
     }
   }
