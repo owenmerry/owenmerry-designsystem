@@ -36,8 +36,6 @@ export const CardListStyle = styled.div`
   /* mobile styles */
   @media only screen and (max-width: 720px) {
     .list{
-      grid-auto-rows: auto;
-      grid-gap: 10px;
       grid-template-columns: ${(props) => '1fr '.repeat(2)};
     }
     .controls{

@@ -8,7 +8,7 @@ export const InputStyle = styled.div`
  }
 
  input[type=text],input[type=password]{
-    width: ${(props) => props.width ? props.width : '200px'};
+    width: ${(props) => props.width ? props.width : '150px'};
     padding: 10px 15px;
     display: inline-block;
     box-sizing: border-box;
@@ -21,7 +21,7 @@ export const InputStyle = styled.div`
     transition: width .2s, border .2s;
     &:focus{
       border: 2px solid ${colors.primary};
-      ${(props) => props.focusExpand && 'width:250px;'}
+      ${(props) => props.focusExpand && 'width:200px;'}
     }
   }
   ${(props) => props.inline && 'display: inline-block;'}
@@ -55,7 +55,7 @@ export const InputStyle = styled.div`
     input[type=text],input[type=password]{
       width: ${(props) => props.width ? props.width : '150px'};
     }
-    display:block;
+    ${(props) => !props.inline && 'display:block;'}
     .wrap{width:100%;}
   }
 

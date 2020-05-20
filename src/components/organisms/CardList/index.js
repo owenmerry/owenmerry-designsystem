@@ -63,7 +63,6 @@ const CardList = props => {
           )}
           <div className='control'>
             <Input
-              inline
               loading={isLoading}
               className='search'
               placeholder='Filter'

@@ -7,8 +7,7 @@ export const CardStyle = styled.div`
     text-decoration: none;
   }
   .card {
-    /* width: ${props => (props.width || '350px')}; */
-    width: 100%;
+    width: ${props => (props.width || '100%')};
     height: 100%;
     border-radius: 15px;
     background-color: white;
@@ -77,7 +76,7 @@ export const CardStyle = styled.div`
     word-break: break-all;
     -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;
-    max-height:30px;
+    max-height:32px;
     overflow:hidden;
   }
   .description-top {
@@ -143,11 +142,13 @@ export const CardStyle = styled.div`
           white-space: inherit;
           font-size: 12px;
           margin-bottom: 5px;
+          max-height:24px;
         }
         .subtitle{
           font-size: 10px;
           line-height: 12px;
           padding-right: 0px;
+          max-height:24px;
         }
       }
 
