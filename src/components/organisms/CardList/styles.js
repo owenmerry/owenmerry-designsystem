@@ -37,8 +37,8 @@ export const CardListStyle = styled.div`
   @media only screen and (max-width: 720px) {
     .list{
       grid-auto-rows: auto;
-      grid-gap: inherit;
-      grid-template-columns: ${(props) => 'auto '.repeat(2)};
+      grid-gap: 10px;
+      grid-template-columns: ${(props) => '1fr '.repeat(2)};
     }
     .controls{
         .control{
@@ -51,14 +51,14 @@ export const CardListStyle = styled.div`
   /* tablet styles */
   @media only screen and (min-width: 720px) and (max-width: 950px) {
     .list{
-      grid-template-columns: ${(props) => 'auto '.repeat(2)};
+      grid-template-columns: ${(props) => '1fr '.repeat(2)};
     }
   }
 
   /* small desktop */
   @media only screen and (min-width: 950px) and (max-width: 1180px) {
     .list{
-      grid-template-columns: ${(props) => 'auto '.repeat(3)};
+      grid-template-columns: ${(props) => '1fr '.repeat(3)};
     }
   }
 

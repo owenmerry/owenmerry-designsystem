@@ -58,6 +58,7 @@ export const MenuStyle = styled.div`
     &.small{
       .link, a{
         font-size:12px;
+        line-height: 15px;
       }
       .link{
         padding: 15px 8px;
@@ -107,5 +108,5 @@ export const MenuStyle = styled.div`
 
   }
 
-  
+
 `;

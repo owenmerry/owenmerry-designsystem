@@ -1,14 +1,15 @@
 import styled from 'styled-components';
-import FlexGrid from '../FlexGrid/index';
 
-export const CardStyle = styled(FlexGrid)`
+export const CardStyle = styled.div`
 
 /* general */
   a {
     text-decoration: none;
   }
   .card {
-    width: ${props => (props.width || '350px')};
+    /* width: ${props => (props.width || '350px')}; */
+    width: 100%;
+    height: 100%;
     border-radius: 15px;
     background-color: white;
     box-shadow: 0px 0px ${props => (props.shadowLarge ? 40 : 8)}px 4px rgba(0,0,0,.2);
@@ -57,13 +58,12 @@ export const CardStyle = styled(FlexGrid)`
     color: #212121;
     font-weight: 600;
     padding-bottom: 5px;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-all;
     -webkit-line-clamp: 1; /* number of lines to show */
     -webkit-box-orient: vertical;
-    max-height:24px;
+    max-height:30px;
     overflow:hidden;
   }
   .subtitle {
@@ -129,19 +129,28 @@ export const CardStyle = styled(FlexGrid)`
   /* mobile styles */
   @media only screen and (max-width: 720px) {
     .card{
-      width: 95%;
+      width: 100%;
       .image{
         height:100px;
       }
-      .title{
-        white-space: inherit;
-        font-size: 12px;
+      .description-top{
+        .title{
+          font-size: 10px;
+        }
       }
-      .subtitle{
-        font-size: 10px;
-        line-height: 12px;
-        padding-right: 0px;
+      .description{
+        .title{
+          white-space: inherit;
+          font-size: 12px;
+          margin-bottom: 5px;
+        }
+        .subtitle{
+          font-size: 10px;
+          line-height: 12px;
+          padding-right: 0px;
+        }
       }
+
     }
   }
 

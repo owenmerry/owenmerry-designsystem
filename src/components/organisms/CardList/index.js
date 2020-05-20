@@ -79,7 +79,7 @@ const CardList = props => {
         </div>
         <div className='list'>
           {stateCardListItems.map((item, index) => (
-            <LazyLoad key={item.id || index} once placeholder={<Card loading title='loading' subtitle='loading' {...props.cardSettings} />}>
+            <LazyLoad key={item.id || index} once placeholder={<Card loading title='loading' subtitle={props.lazyloadShowSubtitle ? 'loading' : false} {...props.cardSettings} />}>
               <Card
                 loading={isLoading}
                 {...props.cardSettings}
@@ -119,6 +119,7 @@ CardList.propTypes = {
   addItem: PropTypes.func,
   addItemPlaceholder: PropTypes.string,
   addItemButton: PropTypes.string,
+  lazyloadShowSubtitle: PropTypes.bool,
 };
 
 CardList.defaultProps = {

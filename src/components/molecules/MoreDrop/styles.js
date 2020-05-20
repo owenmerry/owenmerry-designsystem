@@ -20,4 +20,15 @@ position: relative;
   box-shadow: 0px 0px 5px rgba(0,0,0,.3);
 }
 
+
+/** Device Styles */
+
+  /* mobile styles */
+  @media only screen and (max-width: 720px) {
+    .menu-drop{
+      width:120px;
+    }
+  }
+
+
 `;

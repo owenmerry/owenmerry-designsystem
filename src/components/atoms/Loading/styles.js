@@ -19,7 +19,7 @@ export const LoadingStyle = styled.div`
   /* mobile styles */
   @media only screen and (max-width: 720px) {
     width: 100%;
-    ${(props) => props.block ? '' : 'width:' + props.width};
+    ${(props) => props.block ? '' : 'max-width:' + props.width};
   }
 
 

@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { LoadingStyle } from './styles';
 
-const Text = (props) => {
+const Loading = (props) => {
   return (
     <LoadingStyle {...props} />
   );
 };
 
-Text.propTypes = {
+Loading.propTypes = {
   text: PropTypes.string,
   block: PropTypes.bool,
 };
 
-Text.defaultProps = {
+Loading.defaultProps = {
 };
 
-export default Text;
+export default Loading;

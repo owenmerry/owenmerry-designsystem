@@ -32,7 +32,6 @@ const Card = (props) => {
           )}
           {props.subtitle && (
             <div className='subtitle'>
-              <Loading block width='250px' marginBottom='10px' />
               <Loading block width='250px' />
             </div>
           )}

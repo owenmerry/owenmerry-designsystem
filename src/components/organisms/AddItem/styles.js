@@ -12,4 +12,13 @@ ${(props) => props.inline && 'display: inline-block;'}
     margin-left:10px;
 }
 
+
+/** Device Styles */
+
+  /* mobile styles */
+  @media only screen and (max-width: 720px) {
+    display: block;
+
+  }
+
 `;

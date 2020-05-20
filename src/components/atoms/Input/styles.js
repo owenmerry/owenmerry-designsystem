@@ -53,7 +53,10 @@ export const InputStyle = styled.div`
   /* mobile styles */
   @media only screen and (max-width: 720px) {
     input[type=text],input[type=password]{
-    width: ${(props) => props.width ? props.width : '150px'};
+      width: ${(props) => props.width ? props.width : '150px'};
+    }
+    display:block;
+    .wrap{width:100%;}
   }
 
 `;
