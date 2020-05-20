@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { FaShareSquare } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { CardStyle } from './styles';
-import { Button, Link, Loading } from '../../index';
+import { Button, Link, Loading, MoreDrop } from '../../index';
 import moment from 'moment';
 
 const Card = (props) => {
@@ -42,11 +42,14 @@ const Card = (props) => {
   ) : (
     <CardStyle {...props}>
       <div className='card'>
-        <Link url={cardLink} newWindow={newWindow}>
-          <div className='description-top'>
-            <div className='title'>{timeStampRelative}</div>
+        <div className='description-top'>
+          <div className='title'>{timeStampRelative}</div>
+          <div className='menu'>
+            <MoreDrop itemId={props.id} {...props.moreMenuSettings} />
           </div>
-          {props.imageShow && (
+        </div>
+        {props.imageShow && (
+          <Link url={cardLink} newWindow={newWindow}>
             <div className={'image ' + imageRoundBorder}>
               {hideViewLink ? (
                 ''
@@ -57,7 +60,9 @@ const Card = (props) => {
               )}
               {isNew ? <div className='label-fixture'>NEW</div> : ''}
             </div>
-          )}
+          </Link>
+        )}
+        <Link url={cardLink} newWindow={newWindow}>
           <div className='description'>
             {props.title ? (
               <div className='title'>{props.title}</div>) : ''}
@@ -95,6 +100,8 @@ Card.propTypes = {
   timestamp: PropTypes.string,
   imageRoundBorder: PropTypes.bool,
   imageShow: PropTypes.bool,
+  id: PropTypes.number,
+  moreMenuSettings: PropTypes.object,
 };
 
 Card.defaultProps = {

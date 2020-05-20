@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CardListStyle } from './styles';
-import {Button, Card, Input, Wrapper, AddItem} from '../../index';
+import {Button, Card, Input, Wrapper, AddItem, MoreDrop} from '../../index';
 // import LazyLoad from 'react-lazy-load';
 import LazyLoad from 'react-lazyload';
 
@@ -31,6 +31,7 @@ const CardList = props => {
     const filteredList = props.items.filter((item) => {
       return (item.title && item.title.toLowerCase().search(searchWord) >= 0) ||
       (item.subtitle && item.subtitle.toLowerCase().search(searchWord) >= 0) ||
+      (item.link && item.link.toLowerCase().search(searchWord) >= 0) ||
       false;
     });
     setStateCardListItems(filteredList);
@@ -70,6 +71,10 @@ const CardList = props => {
               focusExpand
             />
           </div>
+
+          {/* <div className='control'>
+            <MoreDrop />
+          </div> */}
 
         </div>
         <div className='list'>

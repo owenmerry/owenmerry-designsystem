@@ -10,6 +10,8 @@ const MenuHorizontal = props => {
   const addClassDark = isDarkStyle ? `menu-dark` : ``;
   const addClassLight = isLightStyle ? `menu-light` : ``;
   const addClassAlign = props.align ? props.align : `left`;
+  const addClassSize = props.size ? props.size : `normal`;
+  const addClassBorder = props.seperator ? 'seperator-' + props.seperator : ``;
   const menuItems = props.items;
   const hasItems = menuItems && menuItems.length > 0;
   const addStyleClass = () => {
@@ -21,7 +23,6 @@ const MenuHorizontal = props => {
   };
 
   const menuClicked = (ref) => {
-    console.log(`clicked ${ref}`);
     if (props.menuClicked) {
       props.menuClicked({ref: ref});
     };
@@ -30,9 +31,9 @@ const MenuHorizontal = props => {
   return (
     <MenuStyle {...props}>
       { hasItems ? (
-        <ul className={`${addStyleClass()} ${addClassAlign} ${addClassDark} ${addClassLight}`}>
+        <ul className={`${addStyleClass()} ${addClassBorder} ${addClassSize} ${addClassAlign} ${addClassDark} ${addClassLight}`}>
           {menuItems.map((item, index) => item && (
-            <li key={index} className={item.selected ? 'selected' : ''}>
+            <li key={index} className={`${item.selected ? 'selected' : ''} ${index === 0 ? 'top' : ''}`}>
               <span className='link' onClick={() => menuClicked(item.ref)}>
                 <Link url={item.url}>
                   {item.icon && (<Icon type={item.icon} />)}
@@ -53,6 +54,8 @@ const MenuHorizontal = props => {
 MenuHorizontal.propTypes = {
   menuClicked: PropTypes.func,
   isVertical: PropTypes.bool,
+  size: PropTypes.string,
+  seperator: PropTypes.string,
 };
 
 MenuHorizontal.defaultProps = {};

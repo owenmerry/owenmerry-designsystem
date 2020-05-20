@@ -1,6 +1,11 @@
 import React from 'react';
+
+// font librarys
 import * as faIcons from 'react-icons/fa';
 import * as mdIcons from 'react-icons/md';
+
+// svgs
+import { ReactComponent as MenuDots } from '../images/svg/menu-dots.svg';
 
 export const iconList = {
   'FaPlus': <faIcons.FaPlus />,
@@ -13,4 +18,5 @@ export const iconList = {
   'add': <faIcons.FaPlus />,
   'menu': <faIcons.FaBars />,
   'home': <faIcons.FaHome />,
+  'menu-dots': <MenuDots />,
 };

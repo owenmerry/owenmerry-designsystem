@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import FlexGrid from '../FlexGrid/index';
 
-const $greyColour = '#c0c0c0';
-
 export const CardStyle = styled(FlexGrid)`
 
 /* general */
@@ -84,15 +82,27 @@ export const CardStyle = styled(FlexGrid)`
   }
   .description-top {
     padding: 15px 15px 5px;
+    display:flex;
     .title{
       font-size: 13px;
       color: #2020C0;
       font-weight: bold;
+      flex: 1;
+    }
+    .menu{
+      text-align:right;
+      width:35px;
+      font-size: 13px;
     }
   }
+
+  /* show on card hover */
   .card:hover {
-    ${'' /* box-shadow: 1px 0px ${props => (props.shadowLarge ? 40 : 8)}px 4px rgba(0,0,0,.2);
-    bottom: 3px; */}
+    .description-top{
+      .menu{
+       /* display:block; */
+      }
+    }
   }
 
   /* loading */

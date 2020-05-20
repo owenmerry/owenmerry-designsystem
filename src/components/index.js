@@ -16,6 +16,7 @@ export { default as FlexGrid } from './molecules/FlexGrid';
 export { default as MenuHorizontal } from './molecules/MenuHorizontal';
 export { default as Title } from './molecules/Title';
 export { default as Tabs } from './molecules/Tabs';
+export { default as MoreDrop } from './molecules/MoreDrop';
 
 // organisms
 export { default as Header } from './organisms/Header';

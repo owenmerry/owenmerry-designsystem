@@ -24,7 +24,6 @@ export const MenuStyle = styled.div`
     .link {
       opacity: 0.5;
       padding: 30px 15px;
-      ${(props) => props.isVertical && 'border-top: solid 1px #e8e8e8;'};
       &:hover{
         opacity: 1;
       }
@@ -40,18 +39,44 @@ export const MenuStyle = styled.div`
       margin-right: 5px;
     }
 
+    /* border seperator */
+    &.seperator-bordertop{
+      .link{
+        border-top: solid 1px #e8e8e8;
+      }
+    }
+    &.seperator-bordertop-nonefirst{
+      .link{
+        border-top: solid 1px #e8e8e8;
+      }
+      .top .link{
+        border-top: none;
+      }
+    }
+
+    /* size */
+    &.small{
+      .link, a{
+        font-size:12px;
+      }
+      .link{
+        padding: 15px 8px;
+      }
+    }
+    /* align */
     &.center{
       justify-content: center;
     }
 
     &.left{
-
+      justify-content: flex-start;
     }
 
     &.right{
       justify-content: flex-end;
     }
 
+    /* main colors */
     &.menu-dark{
       background-color: black;
     }

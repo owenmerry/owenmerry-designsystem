@@ -61,7 +61,7 @@ export const CardListStyle = styled.div`
       grid-template-columns: ${(props) => 'auto '.repeat(3)};
     }
   }
-    
+
 }
 
 
