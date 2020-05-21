@@ -18,6 +18,15 @@ const showInput = (props) => {
         value={props.value}
       />
     );
+  } else if (props.type === 'textarea') {
+    input = (
+      <textarea
+        name={props.name}
+        className={props.className}
+        placeholder={props.placeholder}
+        onChange={props.onChange}
+      >{props.value}</textarea>
+    );
   } else if (props.type === 'password') {
     input = (
       <input

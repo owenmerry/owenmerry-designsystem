@@ -7,7 +7,7 @@ export const InputStyle = styled.div`
    color: blue;
  }
 
- input[type=text],input[type=password]{
+ input[type=text],input[type=password],textarea{
     width: ${(props) => props.width ? props.width : '150px'};
     padding: 10px 15px;
     display: inline-block;

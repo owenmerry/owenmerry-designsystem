@@ -5,6 +5,7 @@ export { default as Text } from './components/atoms/Text';
 export { default as Wrapper } from './components/atoms/Wrapper';
 export { default as Input } from './components/atoms/Input';
 export { default as Alert } from './components/atoms/Alert';
+export { default as PopUp } from './components/atoms/PopUp';
 
 // molecules
 export { default as Card } from './components/molecules/Card';
@@ -30,3 +31,4 @@ export { default as AddItem } from './components/organisms/AddItem';
 export { default as Login } from './components/organisms/Login';
 export { default as Signup } from './components/organisms/Signup';
 export { default as MenuSlide } from './components/organisms/MenuSlide';
+export { default as CardEdit } from './components/organisms/CardEdit';

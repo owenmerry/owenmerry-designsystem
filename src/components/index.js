@@ -8,6 +8,7 @@ export { default as Loading } from './atoms/Loading';
 export { default as Link } from './atoms/Link';
 export { default as Wrapper } from './atoms/Wrapper';
 export { default as Alert } from './atoms/Alert';
+export { default as PopUp } from './atoms/PopUp';
 
 // molecules
 export { default as Card } from './molecules/Card';
@@ -33,3 +34,4 @@ export { default as AddItem } from './organisms/AddItem';
 export { default as Login } from './organisms/Login';
 export { default as Signup } from './organisms/Signup';
 export { default as MenuSlide } from './organisms/MenuSlide';
+export { default as CardEdit } from './organisms/CardEdit';
