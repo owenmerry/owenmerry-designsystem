@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const MenuSlideStyle = styled.div`
+display:fixed;
 
 /* general */
 .background-close{
@@ -9,7 +10,7 @@ export const MenuSlideStyle = styled.div`
     left:0px;
     width:100vw;
     height:100vh;
-    background-color:rgba(0,0,0,.6);
+    background-color:rgba(0,0,0,.1);
     cursor: pointer;
 }
 .slide{
@@ -21,7 +22,7 @@ export const MenuSlideStyle = styled.div`
     max-width:400px;
     height:100vh;
     background-color: white;
-    box-shadow: 0px 0px 30px rgba(0,0,0,.6);
+    box-shadow: 0px 0px 10px rgba(0,0,0,.3);
     .holder{
         position:relative;
         height:100%;

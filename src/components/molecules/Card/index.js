@@ -50,6 +50,7 @@ const Card = (props) => {
         {props.imageShow && (
           <Link url={cardLink} newWindow={newWindow}>
             <div className={'image ' + imageRoundBorder}>
+              <div className='overlay' />
               {hideViewLink ? (
                 ''
               ) : (

@@ -7,6 +7,15 @@ cursor: pointer;
 position: relative;
 /* display:none; */
 
+.overlay{
+  position: fixed;
+  z-index:4;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
 .menu-drop{
   text-align:left;
   position:absolute;

@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import { MoreDropStyle } from './styles';
 import { MenuHorizontal, Icon } from '../../../index';
 
+// animation
+import { motion, AnimatePresence } from 'framer-motion';
+import { animateDropdown } from './animations';
+import { normalTransition } from '../../../helpers/animations';
+
 const MoreDrop = (props) => {
   // state
   const [stateShowMenu, setStateShowMenu] = useState(false);
@@ -28,19 +33,32 @@ const MoreDrop = (props) => {
       <span onClick={toggleMenu}>
         <Icon type='menu-dots' />
       </span>
-      {stateShowMenu && <div className='menu-drop'>
-        <MenuHorizontal
-          {...{
-            light: false,
-            size: 'small',
-            seperator: 'bordertop-nonefirst',
-            items: props.items,
-          }}
-          isVertical
-          menuClicked={(ref) => menuItemClicked(ref)}
-        />
-      </div>
+      {stateShowMenu &&
+        <div className='overlay' onClick={toggleMenu} />
       }
+      <AnimatePresence>
+        {stateShowMenu &&
+        <motion.div
+          className='menu-drop'
+          variants={animateDropdown}
+          initial='closed'
+          exit='closed'
+          animate={stateShowMenu ? 'open' : 'closed'}
+          transition={normalTransition}
+        >
+          <MenuHorizontal
+            {...{
+              light: false,
+              size: 'small',
+              seperator: 'bordertop-nonefirst',
+              items: props.items,
+            }}
+            isVertical
+            menuClicked={(ref) => menuItemClicked(ref)}
+          />
+        </motion.div>
+        }
+      </AnimatePresence>
     </MoreDropStyle>
   );
 };

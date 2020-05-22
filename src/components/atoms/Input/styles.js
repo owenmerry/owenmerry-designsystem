@@ -19,6 +19,9 @@ export const InputStyle = styled.div`
     outline: none;
     font-size: 16px;
     transition: width .2s, border .2s;
+    &:hover{
+      border: 2px solid #b1b1b1;
+    }
     &:focus{
       border: 2px solid ${colors.primary};
       ${(props) => props.focusExpand && 'width:200px;'}
@@ -26,6 +29,9 @@ export const InputStyle = styled.div`
   }
   ${(props) => props.inline && 'display: inline-block;'}
 
+textarea{
+  height:90px;
+}
 
 /* clear styles */
   .wrap {

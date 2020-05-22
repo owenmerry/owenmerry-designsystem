@@ -8,6 +8,12 @@ const Alert = (props) => {
       {props.text && props.type === 'error' && (
         <div className='alert error'>{props.text}</div>
       )}
+      {props.text && props.type === 'warning' && (
+        <div className='alert warning'>{props.text}</div>
+      )}
+      {props.text && props.type === 'success' && (
+        <div className='alert success'>{props.text}</div>
+      )}
     </AlertStyle>
   );
 };

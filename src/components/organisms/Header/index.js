@@ -39,13 +39,11 @@ const Header = props => {
               ]
             }} />
           </div>
-          {stateMenuMobile && (
-            <MenuSlide closeButton={hideMenuMobile} menuSettings={{
-              menuClicked: props.menuClicked,
-              ...props.menuSettings
-            }} />
-          )}
         </div>
+        <MenuSlide show={stateMenuMobile} closeButton={hideMenuMobile} menuSettings={{
+          menuClicked: props.menuClicked,
+          ...props.menuSettings
+        }} />
       </Wrapper>
     </HeaderStyle>
   );

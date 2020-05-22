@@ -31,20 +31,29 @@ const CardEdit = (props) => {
                 <h2>Edit Link</h2>
               </div>
               <div className='input-box'>
-                <div>Title:</div>
+                <div className='label'>Title:</div>
                 <div><Input width='100%' value={stateFormData.title} onChange={(e) => setStateFormData({...stateFormData, title: e.target.value})} /></div>
               </div>
               <div className='input-box'>
-                <div>Description:</div>
+                <div className='label'>Description:</div>
                 <div><Input type='textarea' width='100%' value={stateFormData.description} onChange={(e) => setStateFormData({...stateFormData, description: e.target.value})} /></div>
               </div>
               <div className='input-box'>
-                <div>URL:</div>
+                <div className='label'>URL:</div>
                 <div><Input width='100%' value={stateFormData.url} onChange={(e) => setStateFormData({...stateFormData, url: e.target.value})} /></div>
               </div>
               <div className='button-box'>
                 <Button onClick={submitForm}>Save Details</Button>
               </div>
+              {/* <div className='card-live'>
+                <h2>Preview:</h2>
+                <Card
+                  width='300px'
+                  image={stateFormData.image}
+                  title={stateFormData.title}
+                  subtitle={stateFormData.description}
+                />
+              </div> */}
             </div>
           )}
 
@@ -54,7 +63,7 @@ const CardEdit = (props) => {
                 <h2>Edit Collection</h2>
               </div>
               <div className='input-box'>
-                <div>Name:</div>
+                <div className='label'>Name:</div>
                 <div><Input width='100%' value={stateFormData.name} onChange={(e) => setStateFormData({...stateFormData, name: e.target.value})} /></div>
               </div>
               <div className='button-box'>
@@ -69,7 +78,7 @@ const CardEdit = (props) => {
                 <h2>Add to Collection</h2>
               </div>
               <div className='input-box input-box-list'>
-                <div>Choose Collection:</div>
+                <div className='label'>Save to..</div>
                 {stateFormData.collections && stateFormData.collections.map((item) => (
                   <div onClick={() => props.onSubmit({collectionid: item.id, linkid: stateFormData.linkid})} className='item'>
                     {item.name}

@@ -11,5 +11,6 @@ export const colors = {
   // using
   primary: '#2020C0',
   error: '#e63946',
-
+  warning: '#e67e22',
+  success: '#2ecc71',
 };

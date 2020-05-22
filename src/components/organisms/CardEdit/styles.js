@@ -6,7 +6,6 @@ export const CardEditStyle = styled.div`
 .edit-box{
     padding: 50px;
     h2{
-        margin-bottom: 50px;
         text-align:center;
     }
     .input-box,.button-box{
@@ -14,17 +13,24 @@ export const CardEditStyle = styled.div`
     }
     .input-box{
         margin-bottom:20px;
+        .label{
+          margin-bottom:7px;
+          font-size: 14px;
+        }
     }
     .info-box{
         p{font-size:14px;}
     }
     .input-box-list{
-      max-height:300px
+      max-height:300px;
       overflow: scroll;
       .item{
-        padding:10px;
-        border-bottom: solid 1px rgba(0,0,0,.3);
+        padding:15px 10px;
+        border-bottom: solid 1px rgb(230, 230, 230);
         cursor: pointer;
+        &:hover{
+          background-color:#f7f7f7;
+        }
       }
     }
 }
