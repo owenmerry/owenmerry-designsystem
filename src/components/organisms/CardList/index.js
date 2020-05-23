@@ -13,7 +13,7 @@ const CardList = props => {
   const loadMoreTextLoading = props.loadMoreTextLoading;
   const isLoadMoreLoading = props.isLoadMoreLoading;
   const isLoading = props.loading;
-  const hasAddItem = !!props.addItem;
+  const hasAddItem = !props.addHide && !!props.addItem;
 
   // state
   const [stateCardListItems, setStateCardListItems] = useState(CardListItems);
@@ -21,7 +21,7 @@ const CardList = props => {
 
   useEffect(() => {
     setStateCardListItems(CardListItems);
-  }, [CardListItems]);
+  }, [CardListItems, hasAddItem]);
 
   const updateData = (search) => {
     // const searchWord = stateSearch;
@@ -115,6 +115,7 @@ CardList.propTypes = {
   isLoadMoreLoading: PropTypes.bool,
   loading: PropTypes.bool,
   grid: PropTypes.string,
+  addHide: PropTypes.bool,
   addItem: PropTypes.func,
   addItemPlaceholder: PropTypes.string,
   addItemButton: PropTypes.string,
@@ -122,7 +123,7 @@ CardList.propTypes = {
 };
 
 CardList.defaultProps = {
-  grid: 3
+  grid: 3,
 };
 
 export default CardList;

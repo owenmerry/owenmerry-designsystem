@@ -43,9 +43,10 @@ const Card = (props) => {
       <div className='card'>
         <div className='description-top'>
           <div className='title'>{timeStampRelative}</div>
-          <div className='menu'>
+          {props.moreMenuSettings && <div className='menu'>
             <MoreDrop itemId={props.id} {...props.moreMenuSettings} />
           </div>
+          }
         </div>
         {props.imageShow && (
           <Link url={cardLink} newWindow={newWindow}>
