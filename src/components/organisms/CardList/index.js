@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { CardListStyle } from './styles';
 import {Button, Card, Input, Wrapper, AddItem, MoreDrop} from '../../index';
 // import LazyLoad from 'react-lazy-load';
-import LazyLoad from 'react-lazyload';
+import LazyLoad, { forceCheck } from 'react-lazyload';
 
 const CardList = props => {
   const CardListItems = props.items;
@@ -35,6 +35,11 @@ const CardList = props => {
       false;
     });
     setStateCardListItems(filteredList);
+    setTimeout(runRefresh, 100);
+  };
+
+  const runRefresh = () => {
+    forceCheck();
   };
 
   // functions

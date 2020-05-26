@@ -42,10 +42,14 @@ const CardEdit = (props) => {
                 <div className='label'>URL:</div>
                 <div><Input width='100%' value={stateFormData.url} onChange={(e) => setStateFormData({...stateFormData, url: e.target.value})} /></div>
               </div>
+              <div className='input-box'>
+                <div className='label'>Image URL:</div>
+                <div><Input width='100%' value={stateFormData.image} onChange={(e) => setStateFormData({...stateFormData, image: e.target.value})} /></div>
+              </div>
               <div className='button-box'>
                 <Button onClick={submitForm}>Save Details</Button>
               </div>
-              {/* <div className='card-live'>
+              <div className='card-live'>
                 <h2>Preview:</h2>
                 <Card
                   width='300px'
@@ -53,7 +57,7 @@ const CardEdit = (props) => {
                   title={stateFormData.title}
                   subtitle={stateFormData.description}
                 />
-              </div> */}
+              </div>
             </div>
           )}
 
