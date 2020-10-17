@@ -15,7 +15,7 @@ const Hero = props => {
         <h1>{props.title}</h1>
         <p>{props.paragraph}</p>
         <Link url={props.buttonUrl}>
-          <Button fontColor='white'>{props.buttonLabel}</Button>
+          <Button fontColor='black' backgroundColor='white'>{props.buttonLabel}</Button>
         </Link>
       </div>
     </HeroStyle>

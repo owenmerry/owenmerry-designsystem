@@ -5,7 +5,7 @@ import MenuHorizontal from '../../molecules/MenuHorizontal/index';
 import { Wrapper, MenuSlide } from '../../index';
 
 const Header = props => {
-  const getLogoURL = props.logoURL || 'http://www.webshare.me/images/app/webshare-logo.svg';
+  const getLogoURL = props.logoURL || 'http://webshare.me/webshare-logo.svg';
 
   // state
   const [stateMenuMobile, setStateMenuMobile] = useState(false);

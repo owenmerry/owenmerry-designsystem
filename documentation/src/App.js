@@ -1,9 +1,8 @@
-import React, { Component } from 'react'; 
+import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 import {
@@ -12,13 +11,14 @@ import {
   ComponentsPage,
   AtomsPage,
   LandingPage,
+  LoginPage,
 } from './pages';
 
 export default class App extends Component {
   render () {
     return (
       <Router>
-        <ul>
+        {/* <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -34,7 +34,7 @@ export default class App extends Component {
           <li>
             <Link to="/landing">landing page</Link>
           </li>
-        </ul>
+        </ul> */}
         <Switch>
           <Route exact path="/">
             <HomePage />
@@ -48,8 +48,11 @@ export default class App extends Component {
           <Route path="/atoms">
             <AtomsPage />
           </Route>
-          <Route path="/landing">
+          <Route path="/example">
             <LandingPage />
+          </Route>
+          <Route path="/login">
+            <LoginPage />
           </Route>
         </Switch>
       </Router>

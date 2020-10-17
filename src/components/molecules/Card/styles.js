@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../helpers/settings';
 
 export const CardStyle = styled.div`
 
@@ -140,7 +141,7 @@ export const CardStyle = styled.div`
     bottom: 10px;
     left: 10px;
     padding: 5px 7px;
-    background-color: red;
+    background-color: ${colors.primary};
     border-radius: 10px;
     font-size: 10px;
     color: white;

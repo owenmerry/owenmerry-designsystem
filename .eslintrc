@@ -23,7 +23,7 @@
     // turn off no semi colons
     "semi" : [2, "always"],
 
-    // allow comment at end of list
+    // allow comma at end of list
     "comma-dangle" : 0
   }
 }
