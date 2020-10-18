@@ -60,7 +60,7 @@ const PopUp = (props) => {
 PopUp.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
+    PropTypes.node,
   ]),
   show: PropTypes.bool,
   onPopUpHidden: PropTypes.func,

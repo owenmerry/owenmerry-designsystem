@@ -55,7 +55,7 @@ Header.propTypes = {
   menuSettings: PropTypes.object,
   backgroundColor: PropTypes.string,
   showBorder: PropTypes.bool,
-  menuClicked: PropTypes.bool,
+  menuClicked: PropTypes.func,
   sticky: PropTypes.bool,
 };
 

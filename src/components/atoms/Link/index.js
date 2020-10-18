@@ -23,7 +23,11 @@ const Text = (props) => {
 Text.propTypes = {
   url: PropTypes.string,
   newWindow: PropTypes.bool,
-  children: PropTypes.array,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.array,
+    PropTypes.object,
+  ]),
 };
 
 Text.defaultProps = {

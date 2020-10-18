@@ -31,6 +31,12 @@ const googleSignedIn = (profile) => {
             ]
           }
         }/>
+        <Login
+          showGoogleSignIn={true}
+          onGoogleLogin={googleSignedIn}
+          googleClientId='996626440039-7ranq95afc7hdb3bfgir5g2da8i0mb4e.apps.googleusercontent.com'
+          onLogin={(info) => console.log('login', info)}
+        />
         <Hero
           title='Build Sites With Ease'
           paragraph='dfv dvadv sadvsd vsdv sdv sdv sdvadfvda vad v dv sdvsd vsd v advs dv sadv dsav'
@@ -50,12 +56,6 @@ const googleSignedIn = (profile) => {
           buttonLabel='Sign Up Now'
         ></CallToAction>
         <Gallery />
-        <Login
-          showGoogleSignIn={true}
-          onGoogleLogin={googleSignedIn}
-          googleClientId='996626440039-7ranq95afc7hdb3bfgir5g2da8i0mb4e.apps.googleusercontent.com'
-          onLogin={(info) => console.log('login', info)}
-          />
         <CallToAction
           title='Free Trial'
           paragraph='dfvdvf er veqv e qrv evqev eq v vad va sdvsd vsd vasdv'

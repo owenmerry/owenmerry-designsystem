@@ -1,12 +1,7 @@
 import React from 'react';
 import {
-  Hero,
   CallToAction,
-  Features,
-  Pricing,
-  Articles,
   Header,
-  Gallery,
   Login,
 } from 'owenmerry-designsystem';
 

@@ -20,6 +20,8 @@ const Login = (props) => {
       name: profile.getName(),
       email: profile.getEmail(),
       image: profile.getImageUrl(),
+      token: data.getAuthResponse().id_token,
+      clientId: props.googleClientId,
     };
 
     props.onGoogleLogin(sendData);
@@ -46,10 +48,12 @@ const Login = (props) => {
 
   useEffect(() => {
     if (isGoogleSignIn) {
-      initGoogleSignIn(props.googleClientId, refGoogle.current, signedIn, errorCallback, errorInitCallback);
-      initGoogleSignInOneTap(props.googleClientId, signedInOneTap);
+      setTimeout(() => {
+        initGoogleSignIn(props.googleClientId, refGoogle.current, signedIn, errorCallback, errorInitCallback);
+        initGoogleSignInOneTap(props.googleClientId, signedInOneTap);
+      }, 100);
     }
-  });
+  }, []);
 
   return (
     <Wrapper>
