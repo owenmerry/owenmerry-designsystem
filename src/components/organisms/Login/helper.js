@@ -14,6 +14,7 @@ export const initGoogleSignIn = (clientID, buttonRef, successCallback, errorCall
   auth2 = gapi.auth2.init({
     client_id: clientID,
     cookiepolicy: 'single_host_origin',
+    scope: 'https://www.googleapis.com/auth/calendar.events.readonly',
   }).then(function(data) {
     data.attachClickHandler(buttonRef, {},
       function(googleUser) {

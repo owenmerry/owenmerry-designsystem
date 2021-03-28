@@ -14,6 +14,7 @@ const CardList = props => {
   const isLoadMoreLoading = props.isLoadMoreLoading;
   const isLoading = props.loading;
   const hasAddItem = !props.addHide && !!props.addItem;
+  const hideControls = props.hideControls;
 
   // state
   const [stateCardListItems, setStateCardListItems] = useState(CardListItems);
@@ -54,33 +55,34 @@ const CardList = props => {
   return (
     <Wrapper>
       <CardListStyle {...props}>
-        <div className='controls'>
-          {hasAddItem && (
+        {!hideControls && (
+          <div className='controls'>
+            {hasAddItem && (
+              <div className='control'>
+                <AddItem
+                  loading={isLoading}
+                  inline
+                  addItem={props.addItem}
+                  inputPlaceholder={props.addItemPlaceholder}
+                  buttonLabel={props.addItemButton}
+                />
+              </div>
+            )}
             <div className='control'>
-              <AddItem
+              <Input
                 loading={isLoading}
-                inline
-                addItem={props.addItem}
-                inputPlaceholder={props.addItemPlaceholder}
-                buttonLabel={props.addItemButton}
+                className='search'
+                placeholder='Filter'
+                onChange={searchChange}
+                focusExpand
               />
             </div>
-          )}
-          <div className='control'>
-            <Input
-              loading={isLoading}
-              className='search'
-              placeholder='Filter'
-              onChange={searchChange}
-              focusExpand
-            />
-          </div>
 
-          {/* <div className='control'>
+            {/* <div className='control'>
             <MoreDrop />
           </div> */}
 
-        </div>
+          </div>)}
         <div className='list'>
           {stateCardListItems.map((item, index) => (
             <LazyLoad key={item.id || index} once placeholder={<Card loading title='loading' subtitle={props.lazyloadShowSubtitle ? 'loading' : false} {...props.cardSettings} />}>
@@ -93,7 +95,7 @@ const CardList = props => {
           ))
           }
         </div>
-        {stateCardListItems.length === 0 && (<div className='list-empty'>
+        {!props.hideNoResults && stateCardListItems.length === 0 && (<div className='list-empty'>
           No results found
         </div>)}
         {showLoadMore ? (
@@ -125,6 +127,8 @@ CardList.propTypes = {
   addItemPlaceholder: PropTypes.string,
   addItemButton: PropTypes.string,
   lazyloadShowSubtitle: PropTypes.bool,
+  hideControls: PropTypes.bool,
+  hideNoResults: PropTypes.bool,
 };
 
 CardList.defaultProps = {

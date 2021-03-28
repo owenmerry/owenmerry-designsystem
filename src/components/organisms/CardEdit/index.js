@@ -92,6 +92,22 @@ const CardEdit = (props) => {
             </div>
           )}
 
+          {formType === 'movecollection' && (
+            <div className='form'>
+              <div className='title'>
+                <h2>Move Collection</h2>
+              </div>
+              <div className='input-box input-box-list'>
+                <div className='label'>to..</div>
+                {stateFormData.collections && stateFormData.collections.map((item) => (
+                  <div onClick={() => props.onSubmit({collectionid: stateFormData.collectionid, parentid: item.id})} className='item'>
+                    {item.name}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* <div>
             <Card
               width='300px'

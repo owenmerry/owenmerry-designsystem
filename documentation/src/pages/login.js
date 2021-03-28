@@ -30,7 +30,7 @@ const googleSignedIn = (profile) => {
         <Login
           showGoogleSignIn={true}
           onGoogleLogin={googleSignedIn}
-          googleClientId='996626440039-7ranq95afc7hdb3bfgir5g2da8i0mb4e.apps.googleusercontent.com'
+          googleClientId='996626440039-nklso5ato1rev9qggqfo7ghd990bmtvp.apps.googleusercontent.com'
           onLogin={(info) => console.log('login', info)}
           />
         <CallToAction
