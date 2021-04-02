@@ -51,7 +51,7 @@ const Login = (props) => {
       setTimeout(() => {
         initGoogleSignIn(props.googleClientId, refGoogle.current, signedIn, errorCallback, errorInitCallback);
         initGoogleSignInOneTap(props.googleClientId, signedInOneTap);
-      }, 100);
+      }, 500);
     }
   }, []);
 
