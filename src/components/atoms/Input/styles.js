@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors } from '../../../helpers/settings';
 
 export const InputStyle = styled.div`
@@ -52,6 +52,15 @@ textarea{
         box-sizing: border-box;
     }
   }
+
+
+  /* types */
+  ${props => props.small && css`
+    input[type=text],input[type=password]{
+      padding: 5px 11px;
+      font-size: 14px;
+    }
+  `}
 
 
   /** Device Styles */

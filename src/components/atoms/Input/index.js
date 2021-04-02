@@ -89,6 +89,7 @@ Input.propTypes = {
   clearShow: PropTypes.bool,
   clearClick: PropTypes.func,
   loading: PropTypes.bool,
+  small: PropTypes.bool,
 };
 
 Input.defaultProps = {

@@ -13,9 +13,18 @@ export const CardEditStyle = styled.div`
     }
     .input-box{
         margin-bottom:20px;
-        .label{
-          margin-bottom:7px;
-          font-size: 14px;
+        .controls{
+          display: flex;
+          align-items: center;
+          margin-bottom: 7px;
+            .label{
+              flex: 1;
+            font-size: 14px;
+          }
+          .filter{
+            flex: 1;
+            text-align: right;
+          }
         }
     }
     .info-box{

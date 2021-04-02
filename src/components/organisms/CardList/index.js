@@ -68,15 +68,17 @@ const CardList = props => {
                 />
               </div>
             )}
-            <div className='control'>
-              <Input
-                loading={isLoading}
-                className='search'
-                placeholder='Filter'
-                onChange={searchChange}
-                focusExpand
-              />
-            </div>
+            {CardListItems.length > 0 && (
+              <div className='control'>
+                <Input
+                  loading={isLoading}
+                  className='search'
+                  placeholder='Filter'
+                  onChange={searchChange}
+                  focusExpand
+                />
+              </div>
+            )}
 
             {/* <div className='control'>
             <MoreDrop />
